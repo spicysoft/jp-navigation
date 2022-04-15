@@ -1,5 +1,5 @@
 <template>
-  <div>Footer</div>
+  <SlpButton>Test</SlpButton>
 </template>
 
 <script lang="ts">
