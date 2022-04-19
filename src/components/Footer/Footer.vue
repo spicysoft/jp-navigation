@@ -1,4 +1,7 @@
 <script>
+import Vue from "vue";
+import { SlpContainer, SlpRow, SlpColumn, SlpTypography } from "slippers-ui";
+
 import CCIcon from "../../assets/creative-commons.vue";
 import GitLabIcon from "../../assets/gitlab.vue";
 import SlpTwitter from "../../assets/fa-twitter.vue";
@@ -7,6 +10,11 @@ import SlpYoutube from "../../assets/fa-youtube.vue";
 import SlpLinkedin from "../../assets/fa-linkedin.vue";
 
 import data from "./footer.json";
+
+Vue.component("SlpContainer", SlpContainer);
+Vue.component("SlpRow", SlpRow);
+Vue.component("SlpColumn", SlpColumn);
+Vue.component("SlpTypography", SlpTypography);
 
 export default {
   name: "SlpFooter",
@@ -23,10 +31,6 @@ export default {
       content: data,
       currentYear: new Date().getFullYear(),
     };
-  },
-  async fetch() {
-    const { content } = await this.$content("footer").fetch();
-    this.content = content;
   },
 };
 </script>
@@ -147,6 +151,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "~slippers-ui/src/styles/_variables.scss";
+@import "~slippers-ui/src/styles/base.scss";
+@import "~slippers-ui/dist/slippers-core.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 a:not(.slp-btn) {
   text-decoration: none;
