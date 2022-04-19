@@ -24,9 +24,6 @@ pnpm-debug.log*
 # Docker
 .devcontainer
 
-# Storybook build
-storybook-static
-
 # GitLab Runner Local
 builds 
 

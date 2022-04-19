@@ -1,0 +1,176 @@
+[
+  {
+    "heading": "Why GitLab?",
+    "links": [
+      {
+        "name": "The DevOps Lifecycle",
+        "url": "/stages-devops-lifecycle/"
+      },
+      {
+        "name": "Set up support services",
+        "url": "/services/"
+      },
+      {
+        "name": "Is it any good?",
+        "url": "/is-it-any-good/"
+      },
+      {
+        "name": "Releases",
+        "url": "/releases"
+      },
+      {
+        "name": "Pricing",
+        "url": "/pricing/"
+      },
+      {
+        "name": "Get started",
+        "url": "/get-started/"
+      }
+    ]
+  },
+  {
+    "heading": "Resources",
+    "links": [
+      {
+        "name": "All-Remote",
+        "url": "/company/culture/all-remote/"
+      },
+      {
+        "name": "Blog",
+        "url": "/blog/"
+      },
+      {
+        "name": "Newsletter",
+        "url": "/company/contact/"
+      },
+      {
+        "name": "Topics",
+        "url": "/topics/"
+      },
+      {
+        "name": "Docs",
+        "url": "https://docs.gitlab.com/"
+      },
+      {
+        "name": "Developer Portal",
+        "url": "https://developer.gitlab.com"
+      },
+      {
+        "name": "Install",
+        "url": "/install/"
+      }
+    ]
+  },
+  {
+    "heading": "Community",
+    "links": [
+      {
+        "name": "Contribute to GitLab",
+        "url": "/community/contribute/"
+      },
+      {
+        "name": "GitLab for Open Source",
+        "url": "/solutions/open-source/"
+      },
+      {
+        "name": "GitLab for Education",
+        "url": "/solutions/education/"
+      },
+      {
+        "name": "GitLab for Startups",
+        "url": "/solutions/startups/"
+      },
+      {
+        "name": "Shop",
+        "url": "https://shop.gitlab.com/"
+      },
+      {
+        "name": "Community Forum",
+        "url": "https://forum.gitlab.com/"
+      }
+    ]
+  },
+  {
+    "heading": "Support",
+    "links": [
+      {
+        "name": "Get help",
+        "url": "/get-help/"
+      },
+      {
+        "name": "Contact Sales",
+        "url": "/sales/"
+      },
+      {
+        "name": "Support",
+        "url": "/support/"
+      },
+      {
+        "name": "Status",
+        "url": "https://status.gitlab.com/"
+      },
+      {
+        "name": "Customers Portal",
+        "url": "https://customers.gitlab.com/"
+      }
+    ]
+  },
+  {
+    "heading": "Company",
+    "links": [
+      {
+        "name": "About",
+        "url": "/company/"
+      },
+      {
+        "name": "Jobs",
+        "url": "/jobs/"
+      },
+      {
+        "name": "Culture",
+        "url": "/company/culture/"
+      },
+      {
+        "name": "Leadership",
+        "url": "/company/team/e-group/"
+      },
+      {
+        "name": "Board of Directors",
+        "url": "/company/team/board-of-directors/"
+      },
+      {
+        "name": "Team",
+        "url": "/company/team/"
+      },
+      {
+        "name": "Press",
+        "url": "/press/"
+      },
+      {
+        "name": "Investor Relations",
+        "url": "https://ir.gitlab.com"
+      },
+      {
+        "name": "Handbook",
+        "url": "/handbook/"
+      },
+      {
+        "name": "Security Notifications",
+        "url": "/company/contact/"
+      },
+      {
+        "name": "Terms",
+        "url": "/terms/"
+      },
+      {
+        "name": "Privacy",
+        "url": "/privacy/"
+      },
+      {
+        "name": "Cookies Settings",
+        "is_actually_onetrust_button": true,
+        "id": "ot-sdk-btn"
+      }
+    ]
+  }
+]
