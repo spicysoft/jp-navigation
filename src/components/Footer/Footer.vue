@@ -148,6 +148,20 @@ export default {
 <style lang="scss" scoped>
 @import "~slippers-ui/src/styles/_variables.scss";
 
+a:not(.slp-btn) {
+  text-decoration: none;
+  color: $color-text-link-100;
+}
+
+p > a:not(.slp-btn),
+li a:not(.slp-btn) {
+  color: $color-text-link-100;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .footer {
   background-color: $color-surface-700;
   color: $color-text-50;
