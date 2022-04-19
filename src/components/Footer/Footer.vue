@@ -1,5 +1,4 @@
 <script>
-import Vue from "vue";
 import { SlpContainer, SlpRow, SlpColumn, SlpTypography } from "slippers-ui";
 
 import CCIcon from "../../assets/creative-commons.vue";
@@ -11,14 +10,13 @@ import SlpLinkedin from "../../assets/fa-linkedin.vue";
 
 import data from "./footer.json";
 
-Vue.component("SlpContainer", SlpContainer);
-Vue.component("SlpRow", SlpRow);
-Vue.component("SlpColumn", SlpColumn);
-Vue.component("SlpTypography", SlpTypography);
-
 export default {
   name: "SlpFooter",
   components: {
+    SlpContainer,
+    SlpRow,
+    SlpColumn,
+    SlpTypography,
     CCIcon,
     GitLabIcon,
     SlpTwitter,
