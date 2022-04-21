@@ -167,6 +167,12 @@ li a:not(.slp-btn) {
   }
 }
 
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 .footer {
   background-color: $color-surface-700;
   color: $color-text-50;
