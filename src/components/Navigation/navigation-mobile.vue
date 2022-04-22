@@ -54,16 +54,35 @@ export default Vue.extend({
         <GitLabIcon />
       </SlpButton>
       <div>
-        <SlpButton :href="data.sales.link" variant="secondary" class="slp-mr-8">
+        <SlpButton
+          :href="data.sales.link"
+          variant="secondary"
+          class="slp-mr-8"
+          data-nav="sales"
+        >
           {{ data.sales.text }}
         </SlpButton>
-        <SlpButton :href="data.free_trial.link" variant="primary">
+        <SlpButton
+          :href="data.free_trial.link"
+          variant="primary"
+          data-nav="freetrial"
+        >
           {{ data.free_trial.text }}
         </SlpButton>
-        <SlpButton variant="icon" :href="data.login.link" class="slp-ml-16">
+        <SlpButton
+          variant="icon"
+          :href="data.login.link"
+          class="slp-ml-16"
+          data-nav="login"
+        >
           <ProfileIcon />
         </SlpButton>
-        <SlpButton variant="icon" :href="data.register.link" class="slp-ml-16">
+        <SlpButton
+          variant="icon"
+          :href="data.register.link"
+          class="slp-ml-16"
+          data-nav="register"
+        >
           <AssigneeIcon />
         </SlpButton>
         <SlpButton
@@ -87,6 +106,7 @@ export default Vue.extend({
         :href="data.free_trial.link"
         variant="primary"
         class="navigation-top"
+        data-nav="freetrial"
       >
         {{ data.free_trial.text }}
         <ArrowIcon class="slp-ml-4" direction="right" fill="#fff" />
@@ -95,7 +115,7 @@ export default Vue.extend({
         <SlpButton variant="icon" @click.native="emitSearchEvent()">
           <SearchIcon />
         </SlpButton>
-        <SlpButton variant="icon" href="/">
+        <SlpButton variant="icon" href="/" data-nav="logo">
           <GitLabIcon :size="24" />
         </SlpButton>
         <SlpButton

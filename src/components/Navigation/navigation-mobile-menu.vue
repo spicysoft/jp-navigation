@@ -80,7 +80,7 @@ export default Vue.extend({
           v-if="sectionIndex && sectionIndex == -1"
           class="nav-menu-top_logo"
         >
-          <SlpButton variant="icon" href="/">
+          <SlpButton variant="icon" href="/" data-nav="logo">
             <GitLabIcon />
           </SlpButton>
           <SlpButton variant="icon" @click.native="$emit('onClose')">
@@ -118,6 +118,7 @@ export default Vue.extend({
             variant="ghost"
             :href="data.login.link"
             class="nav-menu_icon"
+            data-nav="login"
           >
             <ProfileIcon class="slp-mr-8" />
             {{ data.login.text }}
@@ -128,6 +129,7 @@ export default Vue.extend({
             variant="ghost"
             :href="data.register.link"
             class="nav-menu_icon"
+            data-nav="register"
           >
             <AssigneeIcon class="slp-mr-8" />
             {{ data.register.text }}
@@ -148,6 +150,7 @@ export default Vue.extend({
             variant="ghost"
             :href="data.sales.link"
             class="nav-menu_icon"
+            data-nav="sales"
           >
             <CommentIcon class="slp-mr-8" />
             {{ data.sales.text }}
@@ -159,6 +162,7 @@ export default Vue.extend({
       :href="data.free_trial.link"
       variant="primary"
       class="nav-menu-bottom"
+      data-nav="freetrial"
     >
       {{ data.free_trial.text }}
     </SlpButton>

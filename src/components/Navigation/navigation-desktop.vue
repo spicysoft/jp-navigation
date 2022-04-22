@@ -85,6 +85,7 @@ export default Vue.extend({
         class="navigation-item-support"
         :href="data.support.link"
         variant="ghost"
+        data-nav="support"
       >
         {{ data.support.text }}
         <ChevronIcon class="slp-ml-8" direction="down" />
@@ -94,6 +95,7 @@ export default Vue.extend({
         class="navigation-item-top slp-ml-24"
         variant="ghost"
         :title="data.login.text"
+        data-nav="login"
       >
         {{ data.login.text }}
       </SlpButton>
@@ -103,6 +105,7 @@ export default Vue.extend({
         class="navigation-item-top slp-mr-24"
         variant="ghost"
         :title="data.register.text"
+        data-nav="register"
       >
         {{ data.register.text }}
       </SlpButton>
@@ -112,7 +115,7 @@ export default Vue.extend({
     </div>
     <div class="navigation-bottom">
       <div class="navigation-bottom-left">
-        <SlpButton class="slp-mr-8" variant="icon" href="/">
+        <SlpButton class="slp-mr-8" variant="icon" href="/" data-nav="logo">
           <GitLabIcon />
         </SlpButton>
         <ul>
@@ -124,6 +127,7 @@ export default Vue.extend({
             class="navigation-item"
             :class="{ active: index === activeNavIndex }"
             :href="navItem.link"
+            :data-nav-levelone="navItem.link ? navItem.title : null"
             :title="navItem.title"
             @click.native="setActiveNavItem(index, $event)"
           >
@@ -133,10 +137,19 @@ export default Vue.extend({
         </ul>
       </div>
       <div class="navigation-bottom-right">
-        <SlpButton :href="data.sales.link" variant="secondary" class="slp-mr-8">
+        <SlpButton
+          :href="data.sales.link"
+          variant="secondary"
+          class="slp-mr-8"
+          data-nav="sales"
+        >
           {{ data.sales.text }}
         </SlpButton>
-        <SlpButton :href="data.free_trial.link" variant="primary">
+        <SlpButton
+          :href="data.free_trial.link"
+          variant="primary"
+          data-nav="freetrial"
+        >
           {{ data.free_trial.text }}
         </SlpButton>
       </div>
@@ -192,6 +205,11 @@ export default Vue.extend({
                       .link.link
                   "
                   variant="ghost"
+                  :data-nav-levelone="data.items[activeNavIndex].title"
+                  :data-nav-leveltwo="
+                    data.items[activeNavIndex].categories[activeCategoryIndex]
+                      .title
+                  "
                 >
                   <SlpTypography variant="body3-bold" tag="span">{{
                     data.items[activeNavIndex].categories[activeCategoryIndex]
@@ -211,7 +229,15 @@ export default Vue.extend({
                 :cols="4"
                 class="nav-menu_card"
               >
-                <a :href="subcategory.link">
+                <a
+                  :href="subcategory.link"
+                  :data-nav-levelone="data.items[activeNavIndex].title"
+                  :data-nav-leveltwo="
+                    data.items[activeNavIndex].categories[activeCategoryIndex]
+                      .title
+                  "
+                  :data-nav-levelthree="subcategory.title"
+                >
                   <div class="nav-menu_card-inner">
                     <SlpTypography variant="body3-bold" tag="h4">
                       {{ subcategory.title }}
@@ -238,7 +264,16 @@ export default Vue.extend({
                 :cols="3"
                 class="nav-menu_img-card-container"
               >
-                <a :href="image.link" class="nav-menu_img-card">
+                <a
+                  :href="image.link"
+                  class="nav-menu_img-card"
+                  :data-nav-levelone="data.items[activeNavIndex].title"
+                  :data-nav-leveltwo="
+                    data.items[activeNavIndex].categories[activeCategoryIndex]
+                      .title
+                  "
+                  :data-nav-levelthree="image.title"
+                >
                   <component :is="image.logo" />
                 </a>
               </SlpColumn>

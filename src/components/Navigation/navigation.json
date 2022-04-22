@@ -31,27 +31,27 @@
           "categories": [
             {
               "title": "Why GitLab?",
-              "description": "We simplify software development so you can focus on what matters most",
+              "description": "See what makes GitLab different",
               "link": "/why"
             },
             {
               "title": "What is DevOps?",
-              "description": "A continuously delivered, high software quality systems development life cycle",
+              "description": "Start your DevOps journey here",
               "link": "/what-is-gitlab/"
             },
             {
               "title": "Customer case studies",
-              "description": "Learn why top companies trust GitLab for DevOps",
+              "description": "Learn why top companies trust GitLab",
               "link": "/customers/"
             },
             {
               "title": "Always iterating",
-              "description": "Link to the latest product updates",
+              "description": "See what’s new and coming soon in GitLab’s monthly releases",
               "link": "/releases/"
             },
             {
               "title": "Trust",
-              "description": "Certifications, privacy, etc.",
+              "description": "Learn more about our commitment to security and compliance",
               "link": "/security"
             },
             {
@@ -116,7 +116,7 @@
             },
             {
               "title": "Monitor",
-              "description": "Help reduce the severity and frequency of incidents",
+              "description": "The feedback you need to reduce the severity and frequency of incidents",
               "link": "/stages-devops-lifecycle/#monitor"
             },
             {
@@ -147,12 +147,12 @@
             },
             {
               "title": "GitOps",
-              "description": "Infrastructure automation and collaboration for cloud native, multicloud, and legacy environments",
+              "description": "Infrastructure automation and collaboration for all environments",
               "link": "/solutions/gitops/"
             },
             {
               "title": "Microservices",
-              "description": "Split applications into small services to innovate faster and achieve  scale",
+              "description": "Split applications into small services to innovate faster and achieve scale",
               "link": "/solutions/microservices/"
             },
             {
@@ -172,7 +172,7 @@
             },
             {
               "title": "Modern applications",
-              "description": "Create new innovative and efficienct opportunities for your business",
+              "description": "Make your migration and modernization efforts a success",
               "link": "/solutions/modern-applications/"
             }
           ]
@@ -249,7 +249,7 @@
             },
             {
               "title": "Monitor",
-              "description": "Help reduce the severity and frequency of incidents",
+              "description": "The feedback you need to reduce the severity and frequency of incidents",
               "link": "/stages-devops-lifecycle/#monitor"
             },
             {
@@ -269,62 +269,22 @@
           "categories": [
             {
               "title": "Feature comparison",
-              "description": "Gain visibility and insight into how your business is performing",
+              "description": "See what you can do with GitLab — from planning to production",
               "link": "/pricing/self-managed/feature-comparison/"
             },
             {
               "title": "Continuous Integration (CI)",
-              "description": "Powerful planning tools to keep everyone synchronized",
+              "description": "Outstanding source code exists. The proof is in the pipeline",
               "link": "/features/continuous-integration"
             },
             {
               "title": "Source Code Mgmt (SCM)",
-              "description": "Create, view, and manage code and data through powerful branching tools",
+              "description": "Enable sharing and collaboration across your team",
               "link": "/stages-devops-lifecycle/source-code-management/"
             },
             {
-              "title": "Security Training",
-              "description": "Keep strict quality standards for code with automatic testing and reporting",
-              "link": "/features/security-training"
-            },
-            {
-              "title": "Security Dashboards",
-              "description": "Package applications / dependencies, manage containers, and build artifacts",
-              "link": "/features/security-dashboards"
-            },
-            {
-              "title": "Code Owners",
-              "description": "Deploy secure, quality code with built-in security capabilities",
-              "link": "/features/code-owners"
-            },
-            {
-              "title": "Approval Rules",
-              "description": "Integrated CD to ship code with zero-touch, on one or one thousand servers",
-              "link": "/features/approval-rules"
-            },
-            {
-              "title": "Code Search",
-              "description": "Configure your applications and infrastructure",
-              "link": "/features/code-search"
-            },
-            {
-              "title": "Roadmaps",
-              "description": "Help reduce the severity and frequency of incidents",
-              "link": "/features/roadmaps"
-            },
-            {
-              "title": "Vulnerability Mgmt",
-              "description": "Protect your apps and infrastructure from security intrusions",
-              "link": "/features/vulnerability-management"
-            },
-            {
-              "title": "Merge Trains",
-              "description": "Configure your applications and infrastructure",
-              "link": "/features/merge-trains"
-            },
-            {
               "title": "Epic and Issue Boards",
-              "description": "Help reduce the severity and frequency of incidents",
+              "description": "The perfect pairing of issue tracking and project management",
               "link": "/stages-devops-lifecycle/issueboard/"
             }
           ]
@@ -340,22 +300,22 @@
           "categories": [
             {
               "title": "The DevOps platform",
-              "description": "Deliver software faster, more efficiently, with stronger security and compliance",
+              "description": "Deliver software faster, with stronger security and compliance",
               "link": "/solutions/devops-platform/"
             },
             {
-              "title": "Delivery automation",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "title": "Automated software delivery",
+              "description": "Achieve your goals faster with automation",
               "link": "/solutions/delivery-automation/"
             },
             {
               "title": "Continuous Software compliance",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "description": "Define, enforce and report on compliance in one platform",
               "link": "/solutions/continuous-software-security-assurance"
             },
             {
               "title": "Continuous software security assurance",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "description": "Shift security left with built-in DevSecOps",
               "link": "/solutions/continuous-software-compliance"
             }
           ]
@@ -366,18 +326,13 @@
           "categories": [
             {
               "title": "Enterprise",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "description": "Adopt one platform for endless possibilities ",
               "link": "/enterprise"
             },
             {
-              "title": "SMB",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "title": "Small business",
+              "description": "Get a DevOps platform that grows with you",
               "link": "/small-business"
-            },
-            {
-              "title": "Startup",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "link": "/solutions/startups/"
             }
           ]
         },
@@ -386,55 +341,14 @@
           "header": "Industries",
           "categories": [
             {
-              "title": "Finance",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "link": "/solutions/finance"
-            },
-            {
-              "title": "Retail",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "link": "/solutions/retail"
-            },
-            {
               "title": "Public sector",
-              "description": "One application. Several opportunities to accelerate your speed to mission",
+              "description": "Accelerate your speed to mission and reduce risk",
               "link": "/solutions/public-sector"
             },
             {
-              "title": "Technology",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "link": "/solutions/technology"
-            },
-            {
               "title": "Education",
-              "description": "Bringing DevOps to your Campus",
+              "description": "Bring DevOps to your campus",
               "link": "/solutions/education"
-            }
-          ]
-        },
-        {
-          "title": "By department",
-          "header": "Departments",
-          "categories": [
-            {
-              "title": "Engineering",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "link": "/solutions/engineering"
-            },
-            {
-              "title": "Product management",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "link": "/solutions/product-management"
-            },
-            {
-              "title": "Information Technology (IT)",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "link": "/solutions/information-technology"
-            },
-            {
-              "title": "QA / Testing",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "link": "/solutions/testing"
             }
           ]
         }
@@ -464,26 +378,32 @@
           ],
           "images": [
             {
+              "title": "aws",
               "logo": "AwsLogo",
               "link": "/partners/technology-partners/aws/"
             },
             {
+              "title": "googlecloud",
               "logo": "GoogleCloudLogo",
               "link": "/partners/technology-partners/google-cloud-platform/"
             },
             {
+              "title": "hashicorp",
               "logo": "HashiCorpLogo",
               "link": "/partners/technology-partners/hashicorp/"
             },
             {
+              "title": "redhat",
               "logo": "RedHatLogo",
               "link": "/partners/technology-partners/redhat/"
             },
             {
+              "title": "vmwaretanzu",
               "logo": "VMwareTanzuLogo",
               "link": "/partners/technology-partners/vmware-tanzu/"
             },
             {
+              "title": "ibm",
               "logo": "IbmLogo",
               "link": "/partners/technology-partners/ibm/"
             }
@@ -526,7 +446,7 @@
             },
             {
               "title": "Analysts",
-              "description": "Links to recent analyst reports where GitLab has been covered or evaluated",
+              "description": "Recent analyst reports covering GitLab",
               "link": "/analysts"
             },
             {
@@ -540,18 +460,13 @@
               "link": "/releases"
             },
             {
-              "title": "Reseller partners",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              "link": "/partners"
-            },
-            {
               "title": "Docs",
               "description": "Access step-by-step tutorials and guides",
               "link": "https://docs.gitlab.com/"
             },
             {
-              "title": "Webinars",
-              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "title": "Webcasts",
+              "description": "Upcoming webcasts and recordings of past webcasts",
               "link": "/webcast"
             }
           ]
@@ -572,7 +487,7 @@
             },
             {
               "title": "Jobs",
-              "description": "Contribute to a culture of empathy and productivity",
+              "description": "See what it’s like to work at GitLab — and our open positions",
               "link": "/jobs"
             },
             {
