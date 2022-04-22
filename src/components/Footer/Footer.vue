@@ -278,7 +278,7 @@ li a:not(.slp-btn) {
     border: none !important;
     padding: 0 !important;
     font-size: 14px !important;
-    font-family: "Source Sans Pro", sans-serif !important;
+    font-family: "Inter", sans-serif !important;
     text-align: left !important;
 
     &:hover {
