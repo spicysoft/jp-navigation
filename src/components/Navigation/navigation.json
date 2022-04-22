@@ -464,27 +464,27 @@
           ],
           "images": [
             {
-              "image_url": "/nuxt-images/partners/aws/aws-logo.svg",
+              "logo": "AwsLogo",
               "link": "/partners/technology-partners/aws/"
             },
             {
-              "image_url": "/nuxt-images/partners/gcp/google_cloud2.svg",
+              "logo": "GoogleCloudLogo",
               "link": "/partners/technology-partners/google-cloud-platform/"
             },
             {
-              "image_url": "/nuxt-images/partners/hashicorp/hashicorp.svg",
+              "logo": "HashiCorpLogo",
               "link": "/partners/technology-partners/hashicorp/"
             },
             {
-              "image_url": "/nuxt-images/partners/redhat/redhat_logo_sqaure.svg",
+              "logo": "RedHatLogo",
               "link": "/partners/technology-partners/redhat/"
             },
             {
-              "image_url": "/nuxt-images/partners/vmware/vmware_tanzu_vertical.png",
+              "logo": "VMwareTanzuLogo",
               "link": "/partners/technology-partners/vmware-tanzu/"
             },
             {
-              "image_url": "/nuxt-images/partners/ibm/ibm.png",
+              "logo": "IbmLogo",
               "link": "/partners/technology-partners/ibm/"
             }
           ]

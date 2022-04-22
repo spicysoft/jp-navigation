@@ -9,6 +9,14 @@ import {
   SlpTypography,
 } from "slippers-ui";
 
+import GoogleCloudLogo from "../../assets/google_cloud.vue";
+import HashiCorpLogo from "../../assets/hashicorp.vue";
+import RedHatLogo from "../../assets/redhat.vue";
+import AwsLogo from "../../assets/aws.vue";
+import IbmLogo from "../../assets/ibm.vue";
+import VMwareTanzuLogo from "../../assets/tanzu.vue";
+
+
 import ChevronIcon from "../../assets/chevron.vue";
 import CloseIcon from "../../assets/close.vue";
 import GitLabIcon from "../../assets/gitlab2.vue";
@@ -17,7 +25,13 @@ import SearchIcon from "../../assets/search.vue";
 export default Vue.extend({
   name: "SlpNavigationDesktop",
   components: {
+    AwsLogo,
+    GoogleCloudLogo,
+    HashiCorpLogo,
+    RedHatLogo,
     ChevronIcon,
+    IbmLogo,
+    VMwareTanzuLogo,
     CloseIcon,
     GitLabIcon,
     SearchIcon,
@@ -58,6 +72,10 @@ export default Vue.extend({
       this.activeCategoryIndex = 0;
       this.isNavOpen = false;
     },
+    emitSearchEvent() {
+      let clickEvent = new Event("searchClick", { bubbles: true });
+      document.dispatchEvent(clickEvent);
+    },
   },
 });
 </script>
@@ -90,7 +108,9 @@ export default Vue.extend({
       >
         {{ data.register.text }}
       </SlpButton>
-      <SearchIcon />
+      <SlpButton variant="icon" @click.native="emitSearchEvent()">
+        <SearchIcon />
+      </SlpButton>
     </div>
     <div class="navigation-bottom">
       <div class="navigation-bottom-left">
@@ -216,12 +236,12 @@ export default Vue.extend({
                 v-for="image in data.items[activeNavIndex].categories[
                   activeCategoryIndex
                 ].images"
-                :key="image.image_url"
+                :key="image.link"
                 :cols="3"
                 class="nav-menu_img-card-container"
               >
                 <a :href="image.link" class="nav-menu_img-card">
-                  <img :src="image.image_url" />
+                  <component :is="image.logo" />
                 </a>
               </SlpColumn>
             </SlpRow>
@@ -356,7 +376,6 @@ a {
 
   &_left-column {
     color: $color-text-50;
-    text-align: end;
     padding-top: $spacing-48;
 
     &:before {
@@ -374,7 +393,7 @@ a {
   &_category-button {
     border: 1px solid $color-surface-700;
     border-radius: $border-radius-4 0 0 $border-radius-4;
-    padding-left: $spacing-16;
+    padding-left: $spacing-16 !important;
     width: 100%;
     color: $color-text-50;
 

@@ -39,6 +39,10 @@ export default Vue.extend({
     toggleNavMenu() {
       this.isMenuOpen = !this.isMenuOpen;
     },
+    emitSearchEvent() {
+      let clickEvent = new Event("searchClick", { bubbles: true });
+      document.dispatchEvent(clickEvent);
+    },
   },
 });
 </script>
@@ -62,7 +66,11 @@ export default Vue.extend({
         <SlpButton variant="icon" :href="data.register.link" class="slp-ml-16">
           <AssigneeIcon />
         </SlpButton>
-        <SlpButton variant="icon" class="slp-ml-16">
+        <SlpButton
+          variant="icon"
+          class="slp-ml-16"
+          @click.native="emitSearchEvent()"
+        >
           <SearchIcon />
         </SlpButton>
         <SlpButton
@@ -84,7 +92,7 @@ export default Vue.extend({
         <ArrowIcon class="slp-ml-4" direction="right" fill="#fff" />
       </SlpButton>
       <div class="navigation-bottom">
-        <SlpButton variant="icon">
+        <SlpButton variant="icon" @click.native="emitSearchEvent()">
           <SearchIcon />
         </SlpButton>
         <SlpButton variant="icon" href="/">

@@ -64,6 +64,10 @@ export default Vue.extend({
         this.activeChildren = this.data.items;
       }
     },
+    emitSearchEvent() {
+      let clickEvent = new Event("searchClickHamburger", { bubbles: true });
+      document.dispatchEvent(clickEvent);
+    },
   },
 });
 </script>
@@ -130,7 +134,11 @@ export default Vue.extend({
           </SlpButton>
         </li>
         <li v-if="sectionIndex && sectionIndex == -1">
-          <SlpButton variant="ghost" class="nav-menu_icon">
+          <SlpButton
+            variant="ghost"
+            class="nav-menu_icon"
+            @click.native="emitSearchEvent()"
+          >
             <SearchIcon class="slp-mr-8" />
             {{ data.search }}
           </SlpButton>

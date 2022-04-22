@@ -30,6 +30,12 @@ export default {
       currentYear: new Date().getFullYear(),
     };
   },
+  methods: {
+    emitOneTrustEvent() {
+      let clickEvent = new Event("oneTrustShowSettings", { bubbles: true });
+      document.dispatchEvent(clickEvent);
+    },
+  },
 };
 </script>
 
@@ -55,6 +61,7 @@ export default {
                   v-if="link.is_actually_onetrust_button"
                   :id="link.id"
                   class="ot-sdk-show-settings"
+                  @click="emitOneTrustEvent()"
                 >
                   {{ link.name }}
                 </button>
