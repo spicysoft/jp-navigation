@@ -50,6 +50,7 @@ export default Vue.extend({
       activeNavIndex: -1,
       activeCategoryIndex: 0,
       isNavOpen: false,
+      isSupportOpen: true,
     };
   },
   methods: {
@@ -74,6 +75,9 @@ export default Vue.extend({
       let clickEvent = new Event("searchClick", { bubbles: true });
       document.dispatchEvent(clickEvent);
     },
+    toggleSupport() {
+      this.isSupportOpen = !this.isSupportOpen;
+    },
   },
 });
 </script>
@@ -83,12 +87,26 @@ export default Vue.extend({
     <div class="navigation-top">
       <SlpButton
         class="navigation-item-support"
-        :href="data.support.link"
+        :class="{ active: isSupportOpen }"
         variant="ghost"
         data-nav="support"
+        @click.native="toggleSupport()"
       >
         {{ data.support.text }}
         <ChevronIcon class="slp-ml-8" direction="down" />
+        <div class="support-dropdown" :class="{ active: isSupportOpen }">
+          <ul>
+            <li
+              v-for="supportItem in data.support.items"
+              :key="supportItem.title"
+              class="support-dropdown_item"
+            >
+              <a :href="supportItem.link">
+                {{ supportItem.text }}
+              </a>
+            </li>
+          </ul>
+        </div>
       </SlpButton>
       <SlpButton
         :href="data.login.link"
@@ -315,8 +333,55 @@ a {
   }
 
   .navigation-item-support {
+    position: relative;
+
+    &.active {
+      font-weight: $font-weight-bold;
+    }
+
     &:hover {
       font-weight: $font-weight-bold;
+    }
+
+    .support-dropdown {
+      display: none;
+      position: absolute;
+      width: 220px;
+      top: 40px;
+      left: -50%;
+      background-color: $color-surface-600;
+      padding: $spacing-16;
+      text-align: left;
+      font-weight: $font-weight-normal;
+
+      &_item {
+        &:not(:last-child) {
+          margin-bottom: $spacing-16;
+        }
+
+        &:hover {
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      a {
+        color: $color-text-50;
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+
+    .support-dropdown::after {
+      content: " ";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent $color-surface-600 transparent;
     }
   }
 

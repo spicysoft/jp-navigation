@@ -11,7 +11,25 @@
   },
   "support": {
     "text": "Support",
-    "link": "/support/"
+    "link": "/support/",
+    "items": [
+      {
+        "text": "Contact support",
+        "link": "/support/"
+      },
+      {
+        "text": "Get help",
+        "link": "/get-help/"
+      },
+      {
+        "text": "Set up support services",
+        "link": "/service/"
+      },
+      {
+        "text": "Contact Sales",
+        "link": "/sales/"
+      }
+    ]
   },
   "login": {
     "text": "Login",
@@ -304,7 +322,7 @@
               "link": "/solutions/devops-platform/"
             },
             {
-              "title": "Automated software delivery",
+              "title": "Automated Software Delivery",
               "description": "Achieve your goals faster with automation",
               "link": "/solutions/delivery-automation/"
             },
