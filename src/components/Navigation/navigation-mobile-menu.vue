@@ -225,6 +225,11 @@ export default Vue.extend({
   &_icon {
     color: $color-text-300;
   }
+
+  // Explicitly set span color to fix iOS 15 safari but
+  span {
+    color: $color-text-300;
+  }
 }
 @import "~slippers-ui/dist/slippers-core.css";
 </style>
