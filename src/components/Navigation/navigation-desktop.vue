@@ -50,7 +50,7 @@ export default Vue.extend({
       activeNavIndex: -1,
       activeCategoryIndex: 0,
       isNavOpen: false,
-      isSupportOpen: true,
+      isSupportOpen: false,
     };
   },
   methods: {
