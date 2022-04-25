@@ -20,7 +20,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <nav class="navigation">
+  <nav id="navigation">
     <slp-navigation-desktop class="navigation-desktop" :data="data" />
     <slp-navigation-mobile class="navigation-mobile" :data="data" />
   </nav>
@@ -38,25 +38,27 @@ export default Vue.extend({
   box-sizing: border-box;
 }
 
-.navigation {
+#navigation {
   position: sticky;
   left: 0;
   right: 0;
   top: 0;
   z-index: 1025;
   background-color: $color-surface-50;
-
-  &-mobile {
-    @media (min-width: $breakpoint-lg) {
-      display: none;
-    }
-  }
-
-  &-desktop {
+  transition: background-color 0.4s;
+  -webkit-transition: background-color 0.4s;
+  -moz-transition: background-color 0.4s;
+}
+.navigation-mobile {
+  @media (min-width: $breakpoint-lg) {
     display: none;
-    @media (min-width: $breakpoint-lg) {
-      display: block;
-    }
+  }
+}
+
+.navigation-desktop {
+  display: none;
+  @media (min-width: $breakpoint-lg) {
+    display: block;
   }
 }
 </style>

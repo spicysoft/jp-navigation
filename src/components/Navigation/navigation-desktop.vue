@@ -51,6 +51,34 @@ export default Vue.extend({
       activeCategoryIndex: 0,
       isNavOpen: false,
       isSupportOpen: false,
+      scrollTimer: -1,
+    };
+  },
+  mounted: function () {
+    window.onscroll = (e) => {
+      if (!this.isNavOpen) {
+        this.$refs.navigationTop.classList.add("scrolling");
+        this.$refs.navigationBottom.classList.add("scrolling");
+
+        // Not scrolling, set transparency
+        if (this.scrollTimer !== -1) {
+          document.getElementById("navigation").style.backgroundColor =
+            "rgb(255, 255, 255, 0.6)";
+        }
+
+        // Is scrolling, stop the timeout
+        if (this.scrollTimer != -1) {
+          clearTimeout(this.scrollTimer);
+        }
+
+        // Set a scroll timeout, when done revert the transparency
+        this.scrollTimer = window.setTimeout(() => {
+          this.$refs.navigationTop.classList.remove("scrolling");
+          this.$refs.navigationBottom.classList.remove("scrolling");
+          document.getElementById("navigation").style.backgroundColor =
+            "rgb(255, 255, 255)";
+        }, 200);
+      }
     };
   },
   methods: {
@@ -85,9 +113,9 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="slp-px-24 slp-pb-12 slp-pt-4">
+  <div>
     <!-- TOP NAVIGATION BAR -->
-    <div class="navigation-top">
+    <div class="navigation-top" ref="navigationTop">
       <SlpButton
         class="navigation-item-support"
         :class="{ active: isSupportOpen }"
@@ -134,7 +162,7 @@ export default Vue.extend({
       </SlpButton>
     </div>
     <!-- BOTTOM NAVIGATION BAR -->
-    <div class="navigation-bottom">
+    <div class="navigation-bottom" ref="navigationBottom">
       <div class="navigation-bottom-left">
         <SlpButton class="slp-mr-8" variant="icon" href="/" data-nav="logo">
           <GitLabIcon />
@@ -315,7 +343,21 @@ a {
   box-sizing: border-box;
 }
 
+.navigation-top .navigation-bottom {
+  backdrop-filter: blur(0px);
+  transition: backdrop-filter 0.4s;
+  &.scrolling {
+    backdrop-filter: blur(6px);
+  }
+}
+
+.navigation-top .navigation-bottom .nav-menu {
+  padding-right: $spacing-24;
+  padding-left: $spacing-24;
+}
+
 .navigation-top {
+  padding-top: $spacing-4;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -396,6 +438,7 @@ a {
 }
 
 .navigation-bottom {
+  padding-bottom: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -424,6 +467,7 @@ a {
         svg {
           display: block;
         }
+        font-weight: $font-weight-bold;
       }
 
       svg {
@@ -459,7 +503,7 @@ a {
   position: fixed;
   left: 0;
   right: 0;
-  top: 136px;
+  top: 124px;
   bottom: 0;
   background-color: $color-surface-50;
 
