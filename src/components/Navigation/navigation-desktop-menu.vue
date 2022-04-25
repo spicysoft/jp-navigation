@@ -86,7 +86,7 @@ export default Vue.extend({
             @click.native="setActiveCategory(index)"
           >
             {{ category.title }}
-            <ChevronIcon direction="right" />
+            <ChevronIcon class="slp-ml-8" direction="right" />
           </SlpButton>
         </SlpColumn>
         <!-- CONTENT AREA -->
@@ -304,11 +304,6 @@ a {
     padding: $spacing-32;
     border: 1px solid $color-surface-200;
     margin-bottom: 32px;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
   }
 }
 </style>

@@ -73,7 +73,7 @@
             {
               "title": "Why GitLab?",
               "description": "See what makes GitLab different",
-              "link": "/why",
+              "link": "/why-gitlab/",
               "ga": {
                 "data-nav-levelone": "why_gitlab",
                 "data-nav-leveltwo": "why_gitlab",

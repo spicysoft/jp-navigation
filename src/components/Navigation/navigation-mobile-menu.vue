@@ -1,7 +1,7 @@
 <script>
 import Vue from "vue";
 
-import { SlpButton, SlpTypography } from "slippers-ui";
+import { SlpButton, SlpColumn, SlpRow, SlpTypography } from "slippers-ui";
 
 import AssigneeIcon from "../../assets/assignee.vue";
 import ChevronIcon from "../../assets/chevron.vue";
@@ -11,18 +11,33 @@ import GitLabIcon from "../../assets/gitlab2.vue";
 import ProfileIcon from "../../assets/profile.vue";
 import SearchIcon from "../../assets/search.vue";
 
+import AwsLogo from "../../assets/aws.vue";
+import GoogleCloudLogo from "../../assets/google_cloud.vue";
+import HashiCorpLogo from "../../assets/hashicorp.vue";
+import IbmLogo from "../../assets/ibm.vue";
+import RedHatLogo from "../../assets/redhat.vue";
+import VMwareTanzuLogo from "../../assets/tanzu.vue";
+
 export default Vue.extend({
   name: "SlpNavigationMobile",
   components: {
     AssigneeIcon,
+    AwsLogo,
     ChevronIcon,
     CloseIcon,
     CommentIcon,
     GitLabIcon,
+    GoogleCloudLogo,
+    HashiCorpLogo,
+    IbmLogo,
     ProfileIcon,
+    RedHatLogo,
     SearchIcon,
     SlpButton,
+    SlpColumn,
+    SlpRow,
     SlpTypography,
+    VMwareTanzuLogo,
   },
   props: {
     data: {
@@ -114,6 +129,27 @@ export default Vue.extend({
           <a v-else :href="item.link">{{ item.title }}</a>
           <ChevronIcon v-if="item.categories" direction="right" />
         </SlpButton>
+        <SlpRow
+          v-if="
+            sectionIndex !== -1 &&
+            categoryIndex !== -1 &&
+            data.items[sectionIndex].categories[categoryIndex].images
+          "
+          class="logos-container"
+        >
+          <SlpColumn
+            v-for="image in data.items[sectionIndex].categories[categoryIndex]
+              .images"
+            :key="image.link"
+            :cols="4"
+            class="logos"
+            size="sm"
+          >
+            <a :href="image.link" class="logos_image" v-bind="image.ga">
+              <component :is="image.logo" />
+            </a>
+          </SlpColumn>
+        </SlpRow>
         <li v-if="sectionIndex && sectionIndex == -1">
           <SlpButton
             variant="ghost"
@@ -232,5 +268,25 @@ export default Vue.extend({
     color: $color-text-300;
   }
 }
+
+.logos-container {
+  width: 100%;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: $spacing-16;
+
+  &_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+  }
+}
+
 @import "~slippers-ui/dist/slippers-core.css";
 </style>
