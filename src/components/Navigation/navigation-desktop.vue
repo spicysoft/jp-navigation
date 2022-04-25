@@ -73,6 +73,7 @@ export default Vue.extend({
     },
     emitSearchEvent() {
       this.closeNavMenu();
+      this.isSupportOpen = false;
       let clickEvent = new Event("searchClick", { bubbles: true });
       document.dispatchEvent(clickEvent);
     },
@@ -84,7 +85,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="slp-px-24 slp-py-16">
+  <div class="slp-px-24 slp-pb-12 slp-pt-4">
     <!-- TOP NAVIGATION BAR -->
     <div class="navigation-top">
       <SlpButton
@@ -318,6 +319,8 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  font-size: $text-body-2;
+  line-height: $line-height-body-2;
 
   .navigation-item-top {
     display: inline-block;
