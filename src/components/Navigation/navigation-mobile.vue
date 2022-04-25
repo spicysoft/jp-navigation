@@ -56,7 +56,7 @@ export default Vue.extend({
       <div>
         <SlpButton
           :href="data.sales.link"
-          variant="secondary"
+          variant="tertiary"
           class="slp-mr-8"
           v-bind="data.sales.ga"
         >
@@ -150,7 +150,8 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: $spacing-16 $spacing-8;
+  padding: $spacing-16 $spacing-8;
+  background-color: $color-surface-50;
 
   @media (max-width: $breakpoint-sm) {
     display: none;
@@ -158,6 +159,8 @@ export default Vue.extend({
 }
 
 .phone {
+  background-color: $color-surface-50;
+
   @media (min-width: $breakpoint-sm) {
     display: none;
   }
@@ -175,7 +178,7 @@ export default Vue.extend({
   }
 
   .navigation-bottom {
-    margin: $spacing-16;
+    padding: $spacing-16;
     display: flex;
     align-items: center;
     justify-content: space-between;

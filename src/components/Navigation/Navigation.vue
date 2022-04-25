@@ -44,10 +44,6 @@ export default Vue.extend({
   right: 0;
   top: 0;
   z-index: 1025;
-  background-color: $color-surface-50;
-  transition: background-color 0.4s;
-  -webkit-transition: background-color 0.4s;
-  -moz-transition: background-color 0.4s;
 }
 .navigation-mobile {
   @media (min-width: $breakpoint-lg) {

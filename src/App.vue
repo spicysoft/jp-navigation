@@ -44,15 +44,10 @@
         rhoncus lacinia. Mauris eleifend faucibus libero, eget dignissim leo
         tempor id.
       </p>
-      <p class="app-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
-        diam sit amet augue euismod bibendum id ac leo. Pellentesque diam nisi,
-        ultrices ac lectus tempus, laoreet posuere purus. Sed vel nulla eget sem
-        auctor auctor. Donec maximus maximus sem sed semper. Suspendisse a ex
-        quis magna lobortis iaculis eu a lorem. Pellentesque porta nulla a
-        rhoncus lacinia. Mauris eleifend faucibus libero, eget dignissim leo
-        tempor id.
-      </p>
+      <img
+        class="test"
+        src="https://i.guim.co.uk/img/media/d143e03bccd1150ef52b8b6abd7f3e46885ea1b3/0_182_5472_3283/master/5472.jpg?width=1020&quality=45&auto=format&fit=max&dpr=2&s=f10587e104d679498f5092e1bf4d158c"
+      />
       <p class="app-body">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
         diam sit amet augue euismod bibendum id ac leo. Pellentesque diam nisi,
@@ -118,5 +113,9 @@ export default Vue.extend({
 
 .app-body {
   margin-bottom: 128px;
+}
+
+.test {
+  max-width: 100%;
 }
 </style>

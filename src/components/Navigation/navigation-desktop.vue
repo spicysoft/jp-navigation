@@ -1,43 +1,49 @@
 <script>
 import Vue from "vue";
 
-import {
-  SlpButton,
-  SlpColumn,
-  SlpContainer,
-  SlpRow,
-  SlpTypography,
-} from "slippers-ui";
+import { SlpButton } from "slippers-ui";
 
-import GoogleCloudLogo from "../../assets/google_cloud.vue";
-import HashiCorpLogo from "../../assets/hashicorp.vue";
-import RedHatLogo from "../../assets/redhat.vue";
-import AwsLogo from "../../assets/aws.vue";
-import IbmLogo from "../../assets/ibm.vue";
-import VMwareTanzuLogo from "../../assets/tanzu.vue";
+import SlpNavigationDesktopMenu from "./navigation-desktop-menu.vue";
+
 import ChevronIcon from "../../assets/chevron.vue";
-import CloseIcon from "../../assets/close.vue";
 import GitLabIcon from "../../assets/gitlab2.vue";
 import SearchIcon from "../../assets/search.vue";
+
+let handleOutsideClick;
+Vue.directive("closable", {
+  bind(el, binding, vnode) {
+    handleOutsideClick = (e) => {
+      e.stopPropagation();
+      const { handler, exclude } = binding.value;
+      let clickedOnExcludedEl = false;
+      exclude.forEach((refName) => {
+        if (!clickedOnExcludedEl) {
+          const excludedEl = vnode.context.$refs[refName];
+          console.log(excludedEl);
+          clickedOnExcludedEl = excludedEl.contains(e.target);
+        }
+      });
+      if (!el.contains(e.target) && !clickedOnExcludedEl) {
+        vnode.context[handler]();
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
+  },
+  unbind() {
+    document.removeEventListener("click", handleOutsideClick);
+    document.removeEventListener("touchstart", handleOutsideClick);
+  },
+});
 
 export default Vue.extend({
   name: "SlpNavigationDesktop",
   components: {
-    AwsLogo,
-    GoogleCloudLogo,
-    HashiCorpLogo,
-    RedHatLogo,
     ChevronIcon,
-    IbmLogo,
-    VMwareTanzuLogo,
-    CloseIcon,
     GitLabIcon,
     SearchIcon,
     SlpButton,
-    SlpColumn,
-    SlpContainer,
-    SlpRow,
-    SlpTypography,
+    SlpNavigationDesktopMenu,
   },
   props: {
     data: {
@@ -47,38 +53,10 @@ export default Vue.extend({
   },
   data() {
     return {
-      activeNavIndex: -1,
       activeCategoryIndex: 0,
+      activeNavIndex: -1,
       isNavOpen: false,
       isSupportOpen: false,
-      scrollTimer: -1,
-    };
-  },
-  mounted: function () {
-    window.onscroll = (e) => {
-      if (!this.isNavOpen) {
-        this.$refs.navigationTop.classList.add("scrolling");
-        this.$refs.navigationBottom.classList.add("scrolling");
-
-        // Not scrolling, set transparency
-        if (this.scrollTimer !== -1) {
-          document.getElementById("navigation").style.backgroundColor =
-            "rgb(255, 255, 255, 0.6)";
-        }
-
-        // Is scrolling, stop the timeout
-        if (this.scrollTimer != -1) {
-          clearTimeout(this.scrollTimer);
-        }
-
-        // Set a scroll timeout, when done revert the transparency
-        this.scrollTimer = window.setTimeout(() => {
-          this.$refs.navigationTop.classList.remove("scrolling");
-          this.$refs.navigationBottom.classList.remove("scrolling");
-          document.getElementById("navigation").style.backgroundColor =
-            "rgb(255, 255, 255)";
-        }, 200);
-      }
     };
   },
   methods: {
@@ -89,6 +67,7 @@ export default Vue.extend({
         this.isNavOpen = true;
         this.activeNavIndex = navIndex;
         this.activeCategoryIndex = 0;
+        this.$refs.navigation.style.backgroundColor = "rgb(255, 255, 255, 1)";
       }
     },
     setActiveCategory(categoryIndex) {
@@ -98,6 +77,7 @@ export default Vue.extend({
       this.activeNavIndex = -1;
       this.activeCategoryIndex = 0;
       this.isNavOpen = false;
+      this.$refs.navigation.style.backgroundColor = null;
     },
     emitSearchEvent() {
       this.closeNavMenu();
@@ -108,221 +88,124 @@ export default Vue.extend({
     toggleSupport() {
       this.isSupportOpen = !this.isSupportOpen;
     },
+    closeSupport() {
+      if (this.isSupportOpen) {
+        this.isSupportOpen = false;
+      }
+    },
   },
 });
 </script>
 
 <template>
   <div>
-    <!-- TOP NAVIGATION BAR -->
-    <div class="navigation-top" ref="navigationTop">
-      <SlpButton
-        class="navigation-item-support"
-        :class="{ active: isSupportOpen }"
-        variant="ghost"
-        @click.native="toggleSupport()"
-      >
-        {{ data.support.text }}
-        <ChevronIcon class="slp-ml-8" direction="down" />
-        <div class="support-dropdown" :class="{ active: isSupportOpen }">
-          <ul>
-            <li
-              v-for="supportItem in data.support.items"
-              :key="supportItem.title"
-              class="support-dropdown_item"
+    <SlpNavigationDesktopMenu
+      v-if="activeNavIndex >= 0"
+      :activeCategoryIndex="activeCategoryIndex"
+      :activeNavIndex="activeNavIndex"
+      :closeNavMenu="closeNavMenu"
+      :setActiveCategory="setActiveCategory"
+      :data="data"
+    />
+    <div class="navigation" ref="navigation">
+      <!-- TOP NAVIGATION BAR -->
+      <div class="navigation-top">
+        <span ref="support-wrapper">
+          <SlpButton
+            class="support"
+            :class="{ active: isSupportOpen }"
+            variant="ghost"
+            @click.native="toggleSupport()"
+          >
+            {{ data.support.text }}
+            <ChevronIcon class="slp-ml-8" direction="down" fill="#74717A" />
+            <div
+              class="support-dropdown"
+              :class="{ active: isSupportOpen }"
+              v-closable="{
+                exclude: ['support-wrapper'],
+                handler: 'closeSupport',
+              }"
             >
-              <a v-bind="supportItem.ga" :href="supportItem.link">
-                {{ supportItem.text }}
-              </a>
-            </li>
+              <ul>
+                <li
+                  v-for="supportItem in data.support.items"
+                  :key="supportItem.title"
+                  class="support-dropdown_item"
+                >
+                  <a v-bind="supportItem.ga" :href="supportItem.link">
+                    {{ supportItem.text }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </SlpButton>
+        </span>
+        <SlpButton
+          :href="data.login.link"
+          class="navigation-item-top slp-ml-24"
+          variant="ghost"
+          :title="data.login.text"
+          v-bind="data.login.ga"
+        >
+          {{ data.login.text }}
+        </SlpButton>
+        <span>/</span>
+        <SlpButton
+          :href="data.register.link"
+          class="navigation-item-top slp-mr-24"
+          variant="ghost"
+          :title="data.register.text"
+          v-bind="data.register.ga"
+        >
+          {{ data.register.text }}
+        </SlpButton>
+        <SlpButton variant="icon" @click.native="emitSearchEvent()">
+          <SearchIcon />
+        </SlpButton>
+      </div>
+      <!-- BOTTOM NAVIGATION BAR -->
+      <div class="navigation-bottom">
+        <div class="navigation-bottom-left">
+          <SlpButton class="slp-mr-8" variant="icon" href="/" data-nav="logo">
+            <GitLabIcon />
+          </SlpButton>
+          <ul>
+            <SlpButton
+              v-for="(navItem, index) in data.items"
+              :key="navItem.title"
+              tag="li"
+              variant="ghost"
+              class="navigation-item"
+              :class="{ active: index === activeNavIndex }"
+              :href="navItem.link"
+              v-bind="navItem.ga"
+              :title="navItem.title"
+              @click.native="setActiveNavItem(index, $event)"
+            >
+              {{ navItem.title }}
+              <ChevronIcon v-if="navItem.categories" direction="down" />
+            </SlpButton>
           </ul>
         </div>
-      </SlpButton>
-      <SlpButton
-        :href="data.login.link"
-        class="navigation-item-top slp-ml-24"
-        variant="ghost"
-        :title="data.login.text"
-        v-bind="data.login.ga"
-      >
-        {{ data.login.text }}
-      </SlpButton>
-      <span>/</span>
-      <SlpButton
-        :href="data.register.link"
-        class="navigation-item-top slp-mr-24"
-        variant="ghost"
-        :title="data.register.text"
-        v-bind="data.register.ga"
-      >
-        {{ data.register.text }}
-      </SlpButton>
-      <SlpButton variant="icon" @click.native="emitSearchEvent()">
-        <SearchIcon />
-      </SlpButton>
-    </div>
-    <!-- BOTTOM NAVIGATION BAR -->
-    <div class="navigation-bottom" ref="navigationBottom">
-      <div class="navigation-bottom-left">
-        <SlpButton class="slp-mr-8" variant="icon" href="/" data-nav="logo">
-          <GitLabIcon />
-        </SlpButton>
-        <ul>
+        <div class="navigation-bottom-right">
           <SlpButton
-            v-for="(navItem, index) in data.items"
-            :key="navItem.title"
-            tag="li"
-            variant="ghost"
-            class="navigation-item"
-            :class="{ active: index === activeNavIndex }"
-            :href="navItem.link"
-            v-bind="navItem.ga"
-            :title="navItem.title"
-            @click.native="setActiveNavItem(index, $event)"
+            :href="data.sales.link"
+            variant="tertiary"
+            class="slp-mr-8"
+            v-bind="data.sales.ga"
           >
-            {{ navItem.title }}
-            <ChevronIcon v-if="navItem.categories" direction="down" />
+            {{ data.sales.text }}
           </SlpButton>
-        </ul>
+          <SlpButton
+            :href="data.free_trial.link"
+            variant="primary"
+            v-bind="data.free_trial.ga"
+          >
+            {{ data.free_trial.text }}
+          </SlpButton>
+        </div>
       </div>
-      <div class="navigation-bottom-right">
-        <SlpButton
-          :href="data.sales.link"
-          variant="secondary"
-          class="slp-mr-8"
-          v-bind="data.sales.ga"
-        >
-          {{ data.sales.text }}
-        </SlpButton>
-        <SlpButton
-          :href="data.free_trial.link"
-          variant="primary"
-          v-bind="data.free_trial.ga"
-        >
-          {{ data.free_trial.text }}
-        </SlpButton>
-      </div>
-    </div>
-    <!-- NAVIGATION MENU -->
-    <div v-if="activeNavIndex >= 0" class="nav-menu">
-      <SlpContainer class="nav-menu_container">
-        <SlpRow class="nav-menu_row">
-          <!-- LEFT TABS -->
-          <SlpColumn :cols="3" class="nav-menu_left-column">
-            <SlpTypography variant="heading3" tag="h2" class="slp-mb-32">
-              {{ data.items[activeNavIndex].title }}
-            </SlpTypography>
-            <SlpButton
-              v-for="(category, index) in data.items[activeNavIndex].categories"
-              :key="category.title"
-              class="nav-menu_category-button"
-              :class="{ active: index === activeCategoryIndex }"
-              variant="ghost"
-              @click.native="setActiveCategory(index, $event)"
-            >
-              {{ category.title }}
-              <ChevronIcon
-                class="nav-menu_category-chevron"
-                direction="right"
-                fill="#fff"
-              />
-            </SlpButton>
-          </SlpColumn>
-          <!-- GRID AREA -->
-          <SlpColumn :cols="9" class="nav-menu_right-column">
-            <div class="slp-p-8">
-              <div class="nav-menu_close-button">
-                <SlpButton variant="ghost" @click.native="closeNavMenu()">
-                  <SlpTypography
-                    class="nav-menu_close-button-text"
-                    variant="body3"
-                  >
-                    {{ data.close }}
-                  </SlpTypography>
-                  <CloseIcon class="slp-ml-8" />
-                </SlpButton>
-              </div>
-              <div
-                class="slp-flex slp-align-items-center slp-justify-content-between"
-              >
-                <SlpTypography variant="heading4" tag="h3">
-                  {{
-                    data.items[activeNavIndex].categories[activeCategoryIndex]
-                      .header
-                  }}
-                </SlpTypography>
-                <SlpButton
-                  v-if="
-                    data.items[activeNavIndex].categories[activeCategoryIndex]
-                      .link
-                  "
-                  :href="
-                    data.items[activeNavIndex].categories[activeCategoryIndex]
-                      .link.link
-                  "
-                  variant="ghost"
-                  v-bind="
-                    data.items[activeNavIndex].categories[activeCategoryIndex]
-                      .ga
-                  "
-                >
-                  <SlpTypography variant="body3-bold" tag="span">{{
-                    data.items[activeNavIndex].categories[activeCategoryIndex]
-                      .link.text
-                  }}</SlpTypography>
-                  <ChevronIcon class="slp-ml-8" direction="right" />
-                </SlpButton>
-              </div>
-              <div class="horizontal-line" />
-            </div>
-            <SlpRow>
-              <SlpColumn
-                v-for="subcategory in data.items[activeNavIndex].categories[
-                  activeCategoryIndex
-                ].categories"
-                :key="subcategory.title"
-                :cols="4"
-                class="nav-menu_card"
-              >
-                <a :href="subcategory.link" v-bind="subcategory.ga">
-                  <div class="nav-menu_card-inner">
-                    <SlpTypography variant="body3-bold" tag="h4">
-                      {{ subcategory.title }}
-                    </SlpTypography>
-                    <SlpTypography variant="body3" tag="P">
-                      {{ subcategory.description }}
-                    </SlpTypography>
-                  </div>
-                </a>
-              </SlpColumn>
-            </SlpRow>
-            <SlpRow
-              v-if="
-                data.items[activeNavIndex].categories[activeCategoryIndex]
-                  .images
-              "
-              class="slp-mt-32"
-            >
-              <SlpColumn
-                v-for="image in data.items[activeNavIndex].categories[
-                  activeCategoryIndex
-                ].images"
-                :key="image.link"
-                :cols="3"
-                class="nav-menu_img-card-container"
-              >
-                <a
-                  :href="image.link"
-                  class="nav-menu_img-card"
-                  v-bind="image.ga"
-                >
-                  <component :is="image.logo" />
-                </a>
-              </SlpColumn>
-            </SlpRow>
-          </SlpColumn>
-        </SlpRow>
-      </SlpContainer>
     </div>
   </div>
 </template>
@@ -331,6 +214,7 @@ export default Vue.extend({
 @import "~slippers-ui/src/styles/_variables.scss";
 @import "~slippers-ui/src/styles/base.scss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "~slippers-ui/dist/slippers-core.css";
 
 // Override default link styling in nav
 a {
@@ -343,21 +227,14 @@ a {
   box-sizing: border-box;
 }
 
-.navigation-top .navigation-bottom {
-  backdrop-filter: blur(0px);
-  transition: backdrop-filter 0.4s;
-  &.scrolling {
-    backdrop-filter: blur(6px);
-  }
-}
-
-.navigation-top .navigation-bottom .nav-menu {
-  padding-right: $spacing-24;
-  padding-left: $spacing-24;
+.navigation {
+  background-color: rgb($color-surface-50, 0.9);
+  padding: $spacing-4 $spacing-24 $spacing-16 $spacing-24;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .navigation-top {
-  padding-top: $spacing-4;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -367,20 +244,23 @@ a {
   .navigation-item-top {
     display: inline-block;
     padding-right: 0px;
+    color: $color-text-200;
     &:hover {
-      font-weight: $font-weight-bold;
+      color: $color-text-300;
     }
   }
 
-  .navigation-item-support {
+  .support {
     position: relative;
+    color: $color-text-200;
 
-    &.active {
-      font-weight: $font-weight-bold;
-    }
-
+    &.active,
     &:hover {
-      font-weight: $font-weight-bold;
+      color: $color-text-300;
+
+      svg {
+        fill: $color-text-300;
+      }
     }
 
     .support-dropdown {
@@ -393,7 +273,6 @@ a {
       background-color: $color-surface-600;
       padding: $spacing-16;
       text-align: left;
-      font-weight: $font-weight-normal;
 
       &_item {
         &:not(:last-child) {
@@ -401,12 +280,14 @@ a {
         }
 
         &:hover {
-          font-weight: $font-weight-bold;
+          a {
+            color: $color-text-50;
+          }
         }
       }
 
       a {
-        color: $color-text-50;
+        color: $color-text-100;
       }
 
       &.active {
@@ -425,20 +306,9 @@ a {
       border-color: transparent transparent $color-surface-600 transparent;
     }
   }
-
-  /* To prevent layout shift on bold hover */
-  .navigation-item-top::before {
-    display: block;
-    content: attr(title);
-    font-weight: bold;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
-  }
 }
 
 .navigation-bottom {
-  padding-bottom: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -451,23 +321,25 @@ a {
   .navigation-bottom-left {
     display: flex;
     align-items: center;
+    color: $color-text-200 !important;
 
     .navigation-item {
       position: relative;
       display: inline-block;
+      color: $color-text-200;
 
       &:hover {
-        font-weight: $font-weight-bold;
+        color: $color-text-300;
         svg {
           display: block;
         }
       }
 
       &.active {
+        color: $color-text-300;
         svg {
           display: block;
         }
-        font-weight: $font-weight-bold;
       }
 
       svg {
@@ -498,126 +370,4 @@ a {
     align-items: center;
   }
 }
-
-.nav-menu {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 124px;
-  bottom: 0;
-  background-color: $color-surface-50;
-
-  &_container {
-    height: 100%;
-  }
-
-  &_row {
-    height: 100%;
-  }
-
-  &_left-column {
-    color: $color-text-50;
-    padding-top: $spacing-48;
-
-    &:before {
-      content: "";
-      position: absolute;
-      background-color: $color-surface-700;
-      top: 0px;
-      left: -4000px;
-      right: 0px;
-      bottom: 0px;
-      z-index: -1;
-    }
-  }
-
-  &_category-button {
-    border: 1px solid $color-surface-700;
-    border-radius: $border-radius-4 0 0 $border-radius-4;
-    padding-left: $spacing-16 !important;
-    width: 100%;
-    color: $color-text-50;
-
-    &.active {
-      background-color: $color-accent-400;
-      font-weight: $font-weight-bold;
-      border: 1px solid $color-accent-400;
-      color: $color-text-300;
-
-      svg {
-        fill: #000000;
-      }
-    }
-
-    &:hover {
-      font-weight: $font-weight-bold;
-    }
-  }
-
-  &_right-column {
-    padding: $spacing-24;
-  }
-}
-
-.nav-menu_close-button {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: $spacing-48;
-
-  &-text {
-    &:hover {
-      font-weight: $font-weight-bold;
-    }
-  }
-}
-
-.horizontal-line {
-  border-top: 1px solid $color-surface-400;
-  margin-bottom: $spacing-48;
-  margin-top: $spacing-8;
-}
-
-.nav-menu_card {
-  padding: $spacing-8 $spacing-16;
-  border-radius: $border-radius-4;
-
-  &:nth-child(3) {
-    .card-inner {
-      margin-right: 0;
-    }
-  }
-
-  &:hover {
-    background-color: $color-surface-800;
-  }
-}
-
-.nav-menu_img-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 160px;
-  height: 160px;
-  padding: $spacing-32;
-  border: 1px solid $color-surface-200;
-  margin-bottom: 32px;
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
-
-.nav-menu_img-card-container {
-  padding-right: $spacing-32;
-}
-
-.nav-menu_card-inner {
-  margin-right: $spacing-32;
-
-  &:not(last-item) {
-    margin-bottom: $spacing-16;
-  }
-}
-@import "~slippers-ui/dist/slippers-core.css";
 </style>
