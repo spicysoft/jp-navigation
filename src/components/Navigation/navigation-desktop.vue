@@ -72,6 +72,7 @@ export default Vue.extend({
       this.isNavOpen = false;
     },
     emitSearchEvent() {
+      this.closeNavMenu();
       let clickEvent = new Event("searchClick", { bubbles: true });
       document.dispatchEvent(clickEvent);
     },
@@ -84,12 +85,12 @@ export default Vue.extend({
 
 <template>
   <div class="slp-px-24 slp-py-16">
+    <!-- TOP NAVIGATION BAR -->
     <div class="navigation-top">
       <SlpButton
         class="navigation-item-support"
         :class="{ active: isSupportOpen }"
         variant="ghost"
-        data-nav="support"
         @click.native="toggleSupport()"
       >
         {{ data.support.text }}
@@ -101,7 +102,7 @@ export default Vue.extend({
               :key="supportItem.title"
               class="support-dropdown_item"
             >
-              <a :href="supportItem.link">
+              <a v-bind="supportItem.ga" :href="supportItem.link">
                 {{ supportItem.text }}
               </a>
             </li>
@@ -113,7 +114,7 @@ export default Vue.extend({
         class="navigation-item-top slp-ml-24"
         variant="ghost"
         :title="data.login.text"
-        data-nav="login"
+        v-bind="data.login.ga"
       >
         {{ data.login.text }}
       </SlpButton>
@@ -123,7 +124,7 @@ export default Vue.extend({
         class="navigation-item-top slp-mr-24"
         variant="ghost"
         :title="data.register.text"
-        data-nav="register"
+        v-bind="data.register.ga"
       >
         {{ data.register.text }}
       </SlpButton>
@@ -131,6 +132,7 @@ export default Vue.extend({
         <SearchIcon />
       </SlpButton>
     </div>
+    <!-- BOTTOM NAVIGATION BAR -->
     <div class="navigation-bottom">
       <div class="navigation-bottom-left">
         <SlpButton class="slp-mr-8" variant="icon" href="/" data-nav="logo">
@@ -145,7 +147,7 @@ export default Vue.extend({
             class="navigation-item"
             :class="{ active: index === activeNavIndex }"
             :href="navItem.link"
-            :data-nav-levelone="navItem.link ? navItem.title : null"
+            v-bind="navItem.ga"
             :title="navItem.title"
             @click.native="setActiveNavItem(index, $event)"
           >
@@ -159,22 +161,24 @@ export default Vue.extend({
           :href="data.sales.link"
           variant="secondary"
           class="slp-mr-8"
-          data-nav="sales"
+          v-bind="data.sales.ga"
         >
           {{ data.sales.text }}
         </SlpButton>
         <SlpButton
           :href="data.free_trial.link"
           variant="primary"
-          data-nav="freetrial"
+          v-bind="data.free_trial.ga"
         >
           {{ data.free_trial.text }}
         </SlpButton>
       </div>
     </div>
+    <!-- NAVIGATION MENU -->
     <div v-if="activeNavIndex >= 0" class="nav-menu">
       <SlpContainer class="nav-menu_container">
         <SlpRow class="nav-menu_row">
+          <!-- LEFT TABS -->
           <SlpColumn :cols="3" class="nav-menu_left-column">
             <SlpTypography variant="heading3" tag="h2" class="slp-mb-32">
               {{ data.items[activeNavIndex].title }}
@@ -188,9 +192,14 @@ export default Vue.extend({
               @click.native="setActiveCategory(index, $event)"
             >
               {{ category.title }}
-              <ChevronIcon class="slp-ml-8" direction="right" fill="#fff" />
+              <ChevronIcon
+                class="nav-menu_category-chevron"
+                direction="right"
+                fill="#fff"
+              />
             </SlpButton>
           </SlpColumn>
+          <!-- GRID AREA -->
           <SlpColumn :cols="9" class="nav-menu_right-column">
             <div class="slp-p-8">
               <div class="nav-menu_close-button">
@@ -223,10 +232,9 @@ export default Vue.extend({
                       .link.link
                   "
                   variant="ghost"
-                  :data-nav-levelone="data.items[activeNavIndex].title"
-                  :data-nav-leveltwo="
+                  v-bind="
                     data.items[activeNavIndex].categories[activeCategoryIndex]
-                      .title
+                      .ga
                   "
                 >
                   <SlpTypography variant="body3-bold" tag="span">{{
@@ -247,15 +255,7 @@ export default Vue.extend({
                 :cols="4"
                 class="nav-menu_card"
               >
-                <a
-                  :href="subcategory.link"
-                  :data-nav-levelone="data.items[activeNavIndex].title"
-                  :data-nav-leveltwo="
-                    data.items[activeNavIndex].categories[activeCategoryIndex]
-                      .title
-                  "
-                  :data-nav-levelthree="subcategory.title"
-                >
+                <a :href="subcategory.link" v-bind="subcategory.ga">
                   <div class="nav-menu_card-inner">
                     <SlpTypography variant="body3-bold" tag="h4">
                       {{ subcategory.title }}
@@ -285,12 +285,7 @@ export default Vue.extend({
                 <a
                   :href="image.link"
                   class="nav-menu_img-card"
-                  :data-nav-levelone="data.items[activeNavIndex].title"
-                  :data-nav-leveltwo="
-                    data.items[activeNavIndex].categories[activeCategoryIndex]
-                      .title
-                  "
-                  :data-nav-levelthree="image.title"
+                  v-bind="image.ga"
                 >
                   <component :is="image.logo" />
                 </a>
@@ -345,6 +340,7 @@ a {
 
     .support-dropdown {
       display: none;
+      z-index: 10000002;
       position: absolute;
       width: 220px;
       top: 40px;
@@ -504,6 +500,10 @@ a {
       svg {
         fill: #000000;
       }
+    }
+
+    &:hover {
+      font-weight: $font-weight-bold;
     }
   }
 

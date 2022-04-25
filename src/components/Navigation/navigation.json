@@ -3,41 +3,64 @@
   "search": "Search",
   "sales": {
     "text": "Talk to an expert",
-    "link": "/sales/"
+    "link": "/sales/",
+    "ga": {
+      "data-nav": "sales"
+    }
   },
   "free_trial": {
     "text": "Get free trial",
-    "link": "https://gitlab.com/-/trial_registrations/new?glm_source=about.gitlab.com&glm_content=default-saas-trial"
+    "link": "https://gitlab.com/-/trial_registrations/new?glm_source=about.gitlab.com&glm_content=default-saas-trial",
+    "ga": {
+      "data-nav": "freetrial"
+    }
   },
   "support": {
     "text": "Support",
-    "link": "/support/",
     "items": [
       {
         "text": "Contact support",
-        "link": "/support/"
+        "link": "/support/",
+        "ga": {
+          "data-nav": "support"
+        }
       },
       {
         "text": "Get help",
-        "link": "/get-help/"
+        "link": "/get-help/",
+        "ga": {
+          "data-nav": "gethelp"
+        }
       },
       {
         "text": "Set up support services",
-        "link": "/service/"
+        "link": "/service/",
+        "ga": {
+          "data-nav": "service"
+        }
       },
       {
         "text": "Contact Sales",
-        "link": "/sales/"
+        "link": "/sales/",
+        "ga": {
+          "data-nav": "sales"
+        }
       }
     ]
   },
   "login": {
     "text": "Login",
-    "link": "/users/sign_in"
+    "link": "/users/sign_in",
+    "ga": {
+      "data-nav": "login"
+    }
   },
   "register": {
     "text": "Register",
-    "link": "/users/sign_up"
+    "link": "/users/sign_up",
+    "ga": {
+      "data-nav": "register"
+    }
   },
   "items": [
     {
@@ -50,37 +73,72 @@
             {
               "title": "Why GitLab?",
               "description": "See what makes GitLab different",
-              "link": "/why"
+              "link": "/why",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "why_gitlab",
+                ":data-nav-levelthree": "why"
+              }
             },
             {
               "title": "What is DevOps?",
               "description": "Start your DevOps journey here",
-              "link": "/what-is-gitlab/"
+              "link": "/what-is-gitlab/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "why_gitlab",
+                ":data-nav-levelthree": "what_is_gitlab"
+              }
             },
             {
               "title": "Customer case studies",
               "description": "Learn why top companies trust GitLab",
-              "link": "/customers/"
+              "link": "/customers/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "why_gitlab",
+                ":data-nav-levelthree": "customers"
+              }
             },
             {
               "title": "Always iterating",
               "description": "See what’s new and coming soon in GitLab’s monthly releases",
-              "link": "/releases/"
+              "link": "/releases/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "why_gitlab",
+                ":data-nav-levelthree": "releases"
+              }
             },
             {
               "title": "Trust",
               "description": "Learn more about our commitment to security and compliance",
-              "link": "/security"
+              "link": "/security",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "why_gitlab",
+                ":data-nav-levelthree": "security"
+              }
             },
             {
               "title": "Blog",
               "description": "Read up on releases, contributions, and more",
-              "link": "/blog"
+              "link": "/blog",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "why_gitlab",
+                ":data-nav-levelthree": "blog"
+              }
             },
             {
               "title": "Community",
               "description": "Access contributor resources and startup grants",
-              "link": "/community/"
+              "link": "/community/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "why_gitlab",
+                ":data-nav-levelthree": "community"
+              }
             }
           ]
         },
@@ -89,58 +147,112 @@
           "header": "The DevOps Lifecycle",
           "link": {
             "text": "View all stages",
-            "link": "/stages-devops-lifecycle"
+            "link": "/stages-devops-lifecycle",
+            "ga": {
+              ":data-nav-levelone": "why_gitlab",
+              ":data-nav-leveltwo": "devops_lifecycle"
+            }
           },
           "categories": [
             {
               "title": "Manage",
               "description": "Gain visibility and insight into how your business is performing",
-              "link": "/stages-devops-lifecycle/#manage"
+              "link": "/stages-devops-lifecycle/#manage",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "manage"
+              }
             },
             {
               "title": "Plan",
               "description": "Powerful planning tools to keep everyone synchronized",
-              "link": "/stages-devops-lifecycle/#plan"
+              "link": "/stages-devops-lifecycle/#plan",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "plan"
+              }
             },
             {
               "title": "Create",
               "description": "Create, view, and manage code and data through powerful branching tools",
-              "link": "/stages-devops-lifecycle/#create"
+              "link": "/stages-devops-lifecycle/#create",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "create"
+              }
             },
             {
               "title": "Verify",
               "description": "Keep strict quality standards for code with automatic testing and reporting",
-              "link": "/stages-devops-lifecycle/#verify"
+              "link": "/stages-devops-lifecycle/#verify",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "verify"
+              }
             },
             {
               "title": "Package",
               "description": "Package applications / dependencies, manage containers, and build artifacts",
-              "link": "/stages-devops-lifecycle/#package"
+              "link": "/stages-devops-lifecycle/#package",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "package"
+              }
             },
             {
               "title": "Secure",
               "description": "Deploy secure, quality code with built-in security capabilities",
-              "link": "/stages-devops-lifecycle/#secure"
+              "link": "/stages-devops-lifecycle/#secure",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "secure"
+              }
             },
             {
               "title": "Release",
               "description": "Integrated CD to ship code with zero-touch, on one or one thousand servers",
-              "link": "/stages-devops-lifecycle/#release"
+              "link": "/stages-devops-lifecycle/#release",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "release"
+              }
             },
             {
               "title": "Configure",
               "description": "Configure your applications and infrastructure",
-              "link": "/stages-devops-lifecycle/#configure"
+              "link": "/stages-devops-lifecycle/#configure",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "configure"
+              }
             },
             {
               "title": "Monitor",
               "description": "The feedback you need to reduce the severity and frequency of incidents",
-              "link": "/stages-devops-lifecycle/#monitor"
+              "link": "/stages-devops-lifecycle/#monitor",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "monitor"
+              }
             },
             {
               "title": "Protect",
               "description": "Protect your apps and infrastructure from security intrusions",
-              "link": "/stages-devops-lifecycle/#protect"
+              "link": "/stages-devops-lifecycle/#protect",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "protect"
+              }
             }
           ]
         },
@@ -151,47 +263,92 @@
             {
               "title": "DevOps",
               "description": "A single application for the entire DevOps lifecycle",
-              "link": "/devops-tools/"
+              "link": "/devops-tools/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "use_cases",
+                ":data-nav-levelthree": "devops"
+              }
             },
             {
               "title": "Digital transformation",
               "description": "Create new online opportunities to drive innovation and efficiency",
-              "link": "/solutions/digital-transformation/"
+              "link": "/solutions/digital-transformation/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "use_cases",
+                ":data-nav-levelthree": "digitak_transformation"
+              }
             },
             {
               "title": "Agile development",
               "description": "Plan and manage your projects and products with integrated Agile support",
-              "link": "/solutions/agile-delivery/"
+              "link": "/solutions/agile-delivery/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "use_cases",
+                ":data-nav-levelthree": "agile_development"
+              }
             },
             {
               "title": "GitOps",
               "description": "Infrastructure automation and collaboration for all environments",
-              "link": "/solutions/gitops/"
+              "link": "/solutions/gitops/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "use_cases",
+                ":data-nav-levelthree": "gitops"
+              }
             },
             {
               "title": "Microservices",
               "description": "Split applications into small services to innovate faster and achieve scale",
-              "link": "/solutions/microservices/"
+              "link": "/solutions/microservices/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "use_cases",
+                ":data-nav-levelthree": "microservices"
+              }
             },
             {
               "title": "DevSecOps",
               "description": "Built-in security and compliance for visibility and control to protect software",
-              "link": "/solutions/dev-sec-ops/"
+              "link": "/solutions/dev-sec-ops/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "use_cases",
+                ":data-nav-levelthree": "devsecops"
+              }
             },
             {
               "title": "Security and compliance",
               "description": "It’s our mission to be the leader in security, innovation, and transparency.",
-              "link": "/security/"
+              "link": "/security/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "use_cases",
+                ":data-nav-levelthree": "security"
+              }
             },
             {
               "title": "Cloud transformation",
               "description": "Shift to cloud native applications in order to gain speed, reliability and scale",
-              "link": "/solutions/cloud-native/"
+              "link": "/solutions/cloud-native/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "use_cases",
+                ":data-nav-levelthree": "cloud_native"
+              }
             },
             {
               "title": "Modern applications",
               "description": "Make your migration and modernization efforts a success",
-              "link": "/solutions/modern-applications/"
+              "link": "/solutions/modern-applications/",
+              "ga": {
+                ":data-nav-levelone": "why_gitlab",
+                ":data-nav-leveltwo": "use_cases",
+                ":data-nav-levelthree": "modern_applications"
+              }
             }
           ]
         }
@@ -207,73 +364,146 @@
             {
               "title": "Install GitLab",
               "description": "Install one package, run a complete solution",
-              "link": "/install"
+              "link": "/install",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "install",
+                ":data-nav-levelthree": "install"
+              }
             },
             {
               "title": "Install CE or EE",
               "description": "GitLab comes in two distributions: Enterprise Edition or Community Edition",
-              "link": "/install/ce-or-ee/"
+              "link": "/install/ce-or-ee/",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "install",
+                ":data-nav-levelthree": "ce_or_ee"
+              }
             },
             {
               "title": "Update GitLab",
               "description": "Update your GitLab installation to take advantage of the latest features",
-              "link": "/update/"
+              "link": "/update/",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "install",
+                ":data-nav-levelthree": "update"
+              }
             }
           ]
         },
         {
           "title": "The DevOps Lifecycle",
           "header": "The DevOps Lifecycle",
+          "link": {
+            "text": "View all stages",
+            "link": "/stages-devops-lifecycle",
+            "ga": {
+              ":data-nav-levelone": "platform",
+              ":data-nav-leveltwo": "devops_lifecycle"
+            }
+          },
           "categories": [
             {
               "title": "Manage",
               "description": "Gain visibility and insight into how your business is performing",
-              "link": "/stages-devops-lifecycle/#manage"
+              "link": "/stages-devops-lifecycle/#manage",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "manage"
+              }
             },
             {
               "title": "Plan",
               "description": "Powerful planning tools to keep everyone synchronized",
-              "link": "/stages-devops-lifecycle/#plan"
+              "link": "/stages-devops-lifecycle/#plan",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "plan"
+              }
             },
             {
               "title": "Create",
               "description": "Create, view, and manage code and data through powerful branching tools",
-              "link": "/stages-devops-lifecycle/#create"
+              "link": "/stages-devops-lifecycle/#create",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "create"
+              }
             },
             {
               "title": "Verify",
               "description": "Keep strict quality standards for code with automatic testing and reporting",
-              "link": "/stages-devops-lifecycle/#verify"
+              "link": "/stages-devops-lifecycle/#verify",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "verify"
+              }
             },
             {
               "title": "Package",
               "description": "Package applications / dependencies, manage containers, and build artifacts",
-              "link": "/stages-devops-lifecycle/#package"
+              "link": "/stages-devops-lifecycle/#package",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "package"
+              }
             },
             {
               "title": "Secure",
               "description": "Deploy secure, quality code with built-in security capabilities",
-              "link": "/stages-devops-lifecycle/#secure"
+              "link": "/stages-devops-lifecycle/#secure",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "secure"
+              }
             },
             {
               "title": "Release",
               "description": "Integrated CD to ship code with zero-touch, on one or one thousand servers",
-              "link": "/stages-devops-lifecycle/#release"
+              "link": "/stages-devops-lifecycle/#release",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "release"
+              }
             },
             {
               "title": "Configure",
               "description": "Configure your applications and infrastructure",
-              "link": "/stages-devops-lifecycle/#configure"
+              "link": "/stages-devops-lifecycle/#configure",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "configure"
+              }
             },
             {
               "title": "Monitor",
               "description": "The feedback you need to reduce the severity and frequency of incidents",
-              "link": "/stages-devops-lifecycle/#monitor"
+              "link": "/stages-devops-lifecycle/#monitor",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "monitor"
+              }
             },
             {
               "title": "Protect",
               "description": "Protect your apps and infrastructure from security intrusions",
-              "link": "/stages-devops-lifecycle/#protect"
+              "link": "/stages-devops-lifecycle/#protect",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "devops_lifecycle",
+                ":data-nav-levelthree": "protect"
+              }
             }
           ]
         },
@@ -284,26 +514,50 @@
             "text": "View all features",
             "link": "/features"
           },
+          "ga": {
+            ":data-nav-levelone": "platform",
+            ":data-nav-leveltwo": "features"
+          },
           "categories": [
             {
               "title": "Feature comparison",
               "description": "See what you can do with GitLab — from planning to production",
-              "link": "/pricing/self-managed/feature-comparison/"
+              "link": "/pricing/self-managed/feature-comparison/",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "features",
+                ":data-nav-levelthree": "comparison"
+              }
             },
             {
               "title": "Continuous Integration (CI)",
               "description": "Outstanding source code exists. The proof is in the pipeline",
-              "link": "/features/continuous-integration"
+              "link": "/features/continuous-integration",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "features",
+                ":data-nav-levelthree": "ci"
+              }
             },
             {
               "title": "Source Code Mgmt (SCM)",
               "description": "Enable sharing and collaboration across your team",
-              "link": "/stages-devops-lifecycle/source-code-management/"
+              "link": "/stages-devops-lifecycle/source-code-management/",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "features",
+                ":data-nav-levelthree": "scm"
+              }
             },
             {
               "title": "Epic and Issue Boards",
               "description": "The perfect pairing of issue tracking and project management",
-              "link": "/stages-devops-lifecycle/issueboard/"
+              "link": "/stages-devops-lifecycle/issueboard/",
+              "ga": {
+                ":data-nav-levelone": "platform",
+                ":data-nav-leveltwo": "features",
+                ":data-nav-levelthree": "issueboard"
+              }
             }
           ]
         }
@@ -319,22 +573,42 @@
             {
               "title": "The DevOps platform",
               "description": "Deliver software faster, with stronger security and compliance",
-              "link": "/solutions/devops-platform/"
+              "link": "/solutions/devops-platform/",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "solutions",
+                ":data-nav-levelthree": "devops_platform"
+              }
             },
             {
               "title": "Automated Software Delivery",
               "description": "Achieve your goals faster with automation",
-              "link": "/solutions/delivery-automation/"
+              "link": "/solutions/delivery-automation/",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "solutions",
+                ":data-nav-levelthree": "automated_delivery"
+              }
             },
             {
               "title": "Continuous Software compliance",
               "description": "Define, enforce and report on compliance in one platform",
-              "link": "/solutions/continuous-software-security-assurance"
+              "link": "/solutions/continuous-software-security-assurance",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "solutions",
+                ":data-nav-levelthree": "continuous_software_compliance"
+              }
             },
             {
               "title": "Continuous software security assurance",
               "description": "Shift security left with built-in DevSecOps",
-              "link": "/solutions/continuous-software-compliance"
+              "link": "/solutions/continuous-software-compliance",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "solutions",
+                ":data-nav-levelthree": "continuous_software_security_assurance"
+              }
             }
           ]
         },
@@ -345,12 +619,22 @@
             {
               "title": "Enterprise",
               "description": "Adopt one platform for endless possibilities ",
-              "link": "/enterprise"
+              "link": "/enterprise",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "company_size",
+                ":data-nav-levelthree": "enterprise"
+              }
             },
             {
               "title": "Small business",
               "description": "Get a DevOps platform that grows with you",
-              "link": "/small-business"
+              "link": "/small-business",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "company_size",
+                ":data-nav-levelthree": "smb"
+              }
             }
           ]
         },
@@ -361,12 +645,22 @@
             {
               "title": "Public sector",
               "description": "Accelerate your speed to mission and reduce risk",
-              "link": "/solutions/public-sector"
+              "link": "/solutions/public-sector",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "industry",
+                ":data-nav-levelthree": "public_sector"
+              }
             },
             {
               "title": "Education",
               "description": "Bring DevOps to your campus",
-              "link": "/solutions/education"
+              "link": "/solutions/education",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "industry",
+                ":data-nav-levelthree": "education"
+              }
             }
           ]
         }
@@ -374,7 +668,10 @@
     },
     {
       "title": "Pricing",
-      "link": "/pricing/"
+      "link": "/pricing/",
+      "ga": {
+        "data-nav": "pricing"
+      }
     },
     {
       "title": "Partners",
@@ -386,44 +683,84 @@
             {
               "title": "Find a technology partner",
               "description": "See our cloud partners and other integrators",
-              "link": "/partners/technology-partners"
+              "link": "/partners/technology-partners",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "technology",
+                ":data-nav-levelthree": "technology_partners"
+              }
             },
             {
               "title": "Become a technology partner",
               "description": "Join our DevOps partner ecosystem",
-              "link": "https://partners.gitlab.com/English/register_email.aspx"
+              "link": "https://partners.gitlab.com/English/register_email.aspx",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "technology",
+                ":data-nav-levelthree": "partner_register"
+              }
             }
           ],
           "images": [
             {
               "title": "aws",
               "logo": "AwsLogo",
-              "link": "/partners/technology-partners/aws/"
+              "link": "/partners/technology-partners/aws/",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "technology",
+                ":data-nav-levelthree": "aws"
+              }
             },
             {
               "title": "googlecloud",
               "logo": "GoogleCloudLogo",
-              "link": "/partners/technology-partners/google-cloud-platform/"
+              "link": "/partners/technology-partners/google-cloud-platform/",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "technology",
+                ":data-nav-levelthree": "google_cloud"
+              }
             },
             {
               "title": "hashicorp",
               "logo": "HashiCorpLogo",
-              "link": "/partners/technology-partners/hashicorp/"
+              "link": "/partners/technology-partners/hashicorp/",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "technology",
+                ":data-nav-levelthree": "hashicorp"
+              }
             },
             {
               "title": "redhat",
               "logo": "RedHatLogo",
-              "link": "/partners/technology-partners/redhat/"
+              "link": "/partners/technology-partners/redhat/",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "technology",
+                ":data-nav-levelthree": "redhat"
+              }
             },
             {
               "title": "vmwaretanzu",
               "logo": "VMwareTanzuLogo",
-              "link": "/partners/technology-partners/vmware-tanzu/"
+              "link": "/partners/technology-partners/vmware-tanzu/",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "technology",
+                ":data-nav-levelthree": "vware_tanzu"
+              }
             },
             {
               "title": "ibm",
               "logo": "IbmLogo",
-              "link": "/partners/technology-partners/ibm/"
+              "link": "/partners/technology-partners/ibm/",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "technology",
+                ":data-nav-levelthree": "ibm"
+              }
             }
           ]
         },
@@ -434,12 +771,22 @@
             {
               "title": "Find a channel partner",
               "description": "Find resellers, solution providers, and more",
-              "link": "https://partners.gitlab.com/English/directory/"
+              "link": "https://partners.gitlab.com/English/directory/",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "channel_partners",
+                ":data-nav-levelthree": "find_a_partner"
+              }
             },
             {
               "title": "Become a channel partner",
               "description": "Grow your business alongside our DevOps experts",
-              "link": "https://partners.gitlab.com/English/#scroll-to-benefits"
+              "link": "https://partners.gitlab.com/English/#scroll-to-benefits",
+              "ga": {
+                ":data-nav-levelone": "solutions",
+                ":data-nav-leveltwo": "channel_partners",
+                ":data-nav-levelthree": "become_a_partner"
+              }
             }
           ]
         }
@@ -455,37 +802,72 @@
             {
               "title": "Blog",
               "description": "Read up on releases, contributions, and more",
-              "link": "/blog"
+              "link": "/blog",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "learn",
+                ":data-nav-levelthree": "blog"
+              }
             },
             {
               "title": "Watch a demo",
               "description": "See how to use GitLab throughout the entire software development lifecycle",
-              "link": "/demo"
+              "link": "/demo",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "learn",
+                ":data-nav-levelthree": "demo"
+              }
             },
             {
               "title": "Analysts",
               "description": "Recent analyst reports covering GitLab",
-              "link": "/analysts"
+              "link": "/analysts",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "learn",
+                ":data-nav-levelthree": "analysts"
+              }
             },
             {
               "title": "Learn",
               "description": "Watch videos, self-driven demos, and more",
-              "link": "/learn"
+              "link": "/learn",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "learn",
+                ":data-nav-levelthree": "learn"
+              }
             },
             {
               "title": "Releases",
               "description": "GitLab releases new features and updates on the 22nd of every month",
-              "link": "/releases"
+              "link": "/releases",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "learn",
+                ":data-nav-levelthree": "releases"
+              }
             },
             {
               "title": "Docs",
               "description": "Access step-by-step tutorials and guides",
-              "link": "https://docs.gitlab.com/"
+              "link": "https://docs.gitlab.com/",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "learn",
+                ":data-nav-levelthree": "docs"
+              }
             },
             {
               "title": "Webcasts",
               "description": "Upcoming webcasts and recordings of past webcasts",
-              "link": "/webcast"
+              "link": "/webcast",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "learn",
+                ":data-nav-levelthree": "webcasts"
+              }
             }
           ]
         },
@@ -496,27 +878,52 @@
             {
               "title": "Company",
               "description": "Learn more about us, where we came from, and where we're headed",
-              "link": "/company"
+              "link": "/company",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "people",
+                ":data-nav-levelthree": "company"
+              }
             },
             {
               "title": "Working remotely",
               "description": "Discover how we work better together – wherever",
-              "link": "/company/culture/all-remote/"
+              "link": "/company/culture/all-remote/",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "people",
+                ":data-nav-levelthree": "all_remote"
+              }
             },
             {
               "title": "Jobs",
               "description": "See what it’s like to work at GitLab — and our open positions",
-              "link": "/jobs"
+              "link": "/jobs",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "people",
+                ":data-nav-levelthree": "jobs"
+              }
             },
             {
               "title": "Community",
               "description": "Access contributor resources and startup grants",
-              "link": "/community"
+              "link": "/community",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "people",
+                ":data-nav-levelthree": "community"
+              }
             },
             {
               "title": "Events",
               "description": "Find meetups, webinars, conferences, and more",
-              "link": "/events"
+              "link": "/events",
+              "ga": {
+                ":data-nav-levelone": "resources",
+                ":data-nav-leveltwo": "people",
+                ":data-nav-levelthree": "events"
+              }
             }
           ]
         }

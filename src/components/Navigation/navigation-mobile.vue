@@ -58,14 +58,14 @@ export default Vue.extend({
           :href="data.sales.link"
           variant="secondary"
           class="slp-mr-8"
-          data-nav="sales"
+          v-bind="data.sales.ga"
         >
           {{ data.sales.text }}
         </SlpButton>
         <SlpButton
           :href="data.free_trial.link"
           variant="primary"
-          data-nav="freetrial"
+          v-bind="data.free_trial.ga"
         >
           {{ data.free_trial.text }}
         </SlpButton>
@@ -73,7 +73,7 @@ export default Vue.extend({
           variant="icon"
           :href="data.login.link"
           class="slp-ml-16"
-          data-nav="login"
+          v-bind="data.login.ga"
         >
           <ProfileIcon />
         </SlpButton>
@@ -81,7 +81,7 @@ export default Vue.extend({
           variant="icon"
           :href="data.register.link"
           class="slp-ml-16"
-          data-nav="register"
+          v-bind="data.register.ga"
         >
           <AssigneeIcon />
         </SlpButton>
@@ -106,7 +106,7 @@ export default Vue.extend({
         :href="data.free_trial.link"
         variant="primary"
         class="navigation-top"
-        data-nav="freetrial"
+        v-bind="data.free_trial.ga"
       >
         {{ data.free_trial.text }}
         <ArrowIcon class="slp-ml-4" direction="right" fill="#fff" />

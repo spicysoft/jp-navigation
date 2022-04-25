@@ -108,6 +108,7 @@ export default Vue.extend({
           class="nav-menu-item"
           :href="item.categories ? '' : item.link"
           @click.native="item.categories ? setActiveNavItem(index) : ''"
+          v-bind="item.ga"
         >
           <span v-if="item.categories">{{ item.title }}</span>
           <a v-else :href="item.link">{{ item.title }}</a>
@@ -118,7 +119,7 @@ export default Vue.extend({
             variant="ghost"
             :href="data.login.link"
             class="nav-menu_icon"
-            data-nav="login"
+            v-bind="data.login.ga"
           >
             <ProfileIcon class="slp-mr-8" />
             {{ data.login.text }}
@@ -129,7 +130,7 @@ export default Vue.extend({
             variant="ghost"
             :href="data.register.link"
             class="nav-menu_icon"
-            data-nav="register"
+            v-bind="data.register.ga"
           >
             <AssigneeIcon class="slp-mr-8" />
             {{ data.register.text }}
@@ -150,7 +151,7 @@ export default Vue.extend({
             variant="ghost"
             :href="data.sales.link"
             class="nav-menu_icon"
-            data-nav="sales"
+            v-bind="data.sales.ga"
           >
             <CommentIcon class="slp-mr-8" />
             {{ data.sales.text }}
@@ -162,7 +163,7 @@ export default Vue.extend({
       :href="data.free_trial.link"
       variant="primary"
       class="nav-menu-bottom"
-      data-nav="freetrial"
+      v-bind="data.free_trial.ga"
     >
       {{ data.free_trial.text }}
     </SlpButton>
