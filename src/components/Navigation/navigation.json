@@ -34,7 +34,7 @@
       },
       {
         "text": "Set up support services",
-        "link": "/service/",
+        "link": "/services/",
         "ga": {
           "data-nav": "service"
         }
@@ -83,7 +83,7 @@
             {
               "title": "What is DevOps?",
               "description": "Start your DevOps journey here",
-              "link": "/what-is-gitlab/",
+              "link": "/topics/devops/",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "why gitlab",
@@ -158,7 +158,7 @@
             {
               "title": "Manage",
               "description": "Gain visibility and insight into how your business is performing",
-              "link": "/stages-devops-lifecycle/#manage",
+              "link": "/stages-devops-lifecycle/manage",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -168,7 +168,7 @@
             {
               "title": "Plan",
               "description": "Powerful planning tools to keep everyone synchronized",
-              "link": "/stages-devops-lifecycle/#plan",
+              "link": "/stages-devops-lifecycle/plan",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -178,7 +178,7 @@
             {
               "title": "Create",
               "description": "Create, view, and manage code and data through powerful branching tools",
-              "link": "/stages-devops-lifecycle/#create",
+              "link": "/stages-devops-lifecycle/create",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -188,7 +188,7 @@
             {
               "title": "Verify",
               "description": "Keep strict quality standards for code with automatic testing and reporting",
-              "link": "/stages-devops-lifecycle/#verify",
+              "link": "/stages-devops-lifecycle/verify",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -198,7 +198,7 @@
             {
               "title": "Package",
               "description": "Package applications / dependencies, manage containers, and build artifacts",
-              "link": "/stages-devops-lifecycle/#package",
+              "link": "/stages-devops-lifecycle/package",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -208,7 +208,7 @@
             {
               "title": "Secure",
               "description": "Deploy secure, quality code with built-in security capabilities",
-              "link": "/stages-devops-lifecycle/#secure",
+              "link": "/stages-devops-lifecycle/secure",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -218,7 +218,7 @@
             {
               "title": "Release",
               "description": "Integrated CD to ship code with zero-touch, on one or one thousand servers",
-              "link": "/stages-devops-lifecycle/#release",
+              "link": "/stages-devops-lifecycle/release",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -228,7 +228,7 @@
             {
               "title": "Configure",
               "description": "Configure your applications and infrastructure",
-              "link": "/stages-devops-lifecycle/#configure",
+              "link": "/stages-devops-lifecycle/configure",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -238,7 +238,7 @@
             {
               "title": "Monitor",
               "description": "The feedback you need to reduce the severity and frequency of incidents",
-              "link": "/stages-devops-lifecycle/#monitor",
+              "link": "/stages-devops-lifecycle/monitor",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -248,7 +248,7 @@
             {
               "title": "Protect",
               "description": "Protect your apps and infrastructure from security intrusions",
-              "link": "/stages-devops-lifecycle/#protect",
+              "link": "/stages-devops-lifecycle/protect",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -264,7 +264,7 @@
             {
               "title": "DevOps",
               "description": "A single application for the entire DevOps lifecycle",
-              "link": "/devops-tools/",
+              "link": "/solutions/devops-platform/",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "use cases",
@@ -400,7 +400,7 @@
             {
               "title": "Manage",
               "description": "Gain visibility and insight into how your business is performing",
-              "link": "/stages-devops-lifecycle/#manage",
+              "link": "/stages-devops-lifecycle/manage",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -410,7 +410,7 @@
             {
               "title": "Plan",
               "description": "Powerful planning tools to keep everyone synchronized",
-              "link": "/stages-devops-lifecycle/#plan",
+              "link": "/stages-devops-lifecycle/plan",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -420,7 +420,7 @@
             {
               "title": "Create",
               "description": "Create, view, and manage code and data through powerful branching tools",
-              "link": "/stages-devops-lifecycle/#create",
+              "link": "/stages-devops-lifecycle/create",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -430,7 +430,7 @@
             {
               "title": "Verify",
               "description": "Keep strict quality standards for code with automatic testing and reporting",
-              "link": "/stages-devops-lifecycle/#verify",
+              "link": "/stages-devops-lifecycle/verify",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -440,7 +440,7 @@
             {
               "title": "Package",
               "description": "Package applications / dependencies, manage containers, and build artifacts",
-              "link": "/stages-devops-lifecycle/#package",
+              "link": "/stages-devops-lifecycle/package",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -450,7 +450,7 @@
             {
               "title": "Secure",
               "description": "Deploy secure, quality code with built-in security capabilities",
-              "link": "/stages-devops-lifecycle/#secure",
+              "link": "/stages-devops-lifecycle/secure",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -460,7 +460,7 @@
             {
               "title": "Release",
               "description": "Integrated CD to ship code with zero-touch, on one or one thousand servers",
-              "link": "/stages-devops-lifecycle/#release",
+              "link": "/stages-devops-lifecycle/release",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -470,7 +470,7 @@
             {
               "title": "Configure",
               "description": "Configure your applications and infrastructure",
-              "link": "/stages-devops-lifecycle/#configure",
+              "link": "/stages-devops-lifecycle/configure",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -480,7 +480,7 @@
             {
               "title": "Monitor",
               "description": "The feedback you need to reduce the severity and frequency of incidents",
-              "link": "/stages-devops-lifecycle/#monitor",
+              "link": "/stages-devops-lifecycle/monitor",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -490,7 +490,7 @@
             {
               "title": "Protect",
               "description": "Protect your apps and infrastructure from security intrusions",
-              "link": "/stages-devops-lifecycle/#protect",
+              "link": "/stages-devops-lifecycle/protect",
               "ga": {
                 "data-nav-levelone": "platform",
                 "data-nav-leveltwo": "devops lifecycle",
@@ -501,7 +501,7 @@
         },
         {
           "title": "Features",
-          "header": "Quick setup checklists",
+          "header": "Features",
           "link": {
             "text": "View all features",
             "link": "/features"

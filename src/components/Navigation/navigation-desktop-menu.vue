@@ -305,5 +305,16 @@ a {
     border: 1px solid $color-surface-200;
     margin-bottom: 32px;
   }
+
+  &:hover {
+    .logos_image {
+      border: 1px solid $color-surface-400;
+    }
+  }
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
 }
 </style>

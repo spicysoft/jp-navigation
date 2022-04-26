@@ -1,7 +1,6 @@
 <script>
 import { SlpContainer, SlpRow, SlpColumn, SlpTypography } from "slippers-ui";
 
-import CCIcon from "../../assets/creative-commons.vue";
 import GitLabIcon from "../../assets/gitlab.vue";
 import SlpTwitter from "../../assets/fa-twitter.vue";
 import SlpFacebook from "../../assets/fa-facebook.vue";
@@ -17,7 +16,6 @@ export default {
     SlpRow,
     SlpColumn,
     SlpTypography,
-    CCIcon,
     GitLabIcon,
     SlpTwitter,
     SlpFacebook,
@@ -107,7 +105,6 @@ export default {
               data-ga-location="footer"
               >contribute</a
             >.
-            <CCIcon />
           </p>
           <p>&copy; {{ currentYear }} GitLab B.V.</p>
         </div>

@@ -286,6 +286,11 @@ export default Vue.extend({
     width: 64px;
     height: 64px;
   }
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 @import "~slippers-ui/dist/slippers-core.css";
