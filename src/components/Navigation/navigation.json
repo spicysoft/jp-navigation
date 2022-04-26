@@ -523,16 +523,6 @@
               }
             },
             {
-              "title": "Continuous Integration (CI)",
-              "description": "Outstanding source code exists. The proof is in the pipeline",
-              "link": "/features/continuous-integration",
-              "ga": {
-                "data-nav-levelone": "platform",
-                "data-nav-leveltwo": "features",
-                "data-nav-levelthree": "ci"
-              }
-            },
-            {
               "title": "Source Code Mgmt (SCM)",
               "description": "Enable sharing and collaboration across your team",
               "link": "/stages-devops-lifecycle/source-code-management/",
