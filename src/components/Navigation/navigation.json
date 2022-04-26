@@ -50,14 +50,14 @@
   },
   "login": {
     "text": "Login",
-    "link": "/users/sign_in",
+    "link": "https://gitlab.com/users/sign_in/",
     "ga": {
       "data-nav": "login"
     }
   },
   "register": {
     "text": "Register",
-    "link": "/users/sign_up",
+    "link": "https://gitlab.com/users/sign_up/",
     "ga": {
       "data-nav": "register"
     }
