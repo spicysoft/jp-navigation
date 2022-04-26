@@ -340,16 +340,6 @@
                 "data-nav-leveltwo": "use cases",
                 "data-nav-levelthree": "cloud native"
               }
-            },
-            {
-              "title": "Modern applications",
-              "description": "Make your migration and modernization efforts a success",
-              "link": "/solutions/modern-applications/",
-              "ga": {
-                "data-nav-levelone": "why gitlab",
-                "data-nav-leveltwo": "use cases",
-                "data-nav-levelthree": "modern applications"
-              }
             }
           ]
         }
