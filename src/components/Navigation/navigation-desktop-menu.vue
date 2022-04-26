@@ -200,7 +200,7 @@ a {
 
 .menu {
   position: fixed;
-  top: 116px;
+  top: 120px;
   right: 0;
   bottom: 0;
   left: 0;

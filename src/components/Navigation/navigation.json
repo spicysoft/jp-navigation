@@ -572,26 +572,6 @@
                 "data-nav-leveltwo": "solutions",
                 "data-nav-levelthree": "automated delivery"
               }
-            },
-            {
-              "title": "Continuous Software compliance",
-              "description": "Define, enforce and report on compliance in one platform",
-              "link": "/solutions/continuous-software-security-assurance",
-              "ga": {
-                "data-nav-levelone": "solutions",
-                "data-nav-leveltwo": "solutions",
-                "data-nav-levelthree": "continuous software compliance"
-              }
-            },
-            {
-              "title": "Continuous software security assurance",
-              "description": "Shift security left with built-in DevSecOps",
-              "link": "/solutions/continuous-software-compliance",
-              "ga": {
-                "data-nav-levelone": "solutions",
-                "data-nav-leveltwo": "solutions",
-                "data-nav-levelthree": "continuous software_security assurance"
-              }
             }
           ]
         },
