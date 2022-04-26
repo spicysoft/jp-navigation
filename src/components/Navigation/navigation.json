@@ -304,7 +304,7 @@
             {
               "title": "Microservices",
               "description": "Split applications into small services to innovate faster and achieve scale",
-              "link": "/solutions/microservices/",
+              "link": "/topics/microservices/",
               "ga": {
                 "data-nav-levelone": "why gitlab",
                 "data-nav-leveltwo": "use cases",
