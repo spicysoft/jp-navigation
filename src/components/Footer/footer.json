@@ -16,7 +16,7 @@
       },
       {
         "name": "Releases",
-        "url": "/releases"
+        "url": "/releases/"
       },
       {
         "name": "Pricing",
@@ -53,7 +53,7 @@
       },
       {
         "name": "Developer Portal",
-        "url": "https://developer.gitlab.com"
+        "url": "https://developer.gitlab.com/"
       },
       {
         "name": "Install",
