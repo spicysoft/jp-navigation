@@ -10,7 +10,7 @@
   },
   "free_trial": {
     "text": "Get free trial",
-    "link": "https://gitlab.com/-/trial_registrations/new?glm_source=about.gitlab.com&glm_content=default-saas-trial/",
+    "link": "https://gitlab.com/-/trial_registrations/new?glm_source=about.gitlab.com&glm_content=default-saas-trial",
     "ga": {
       "data-nav": "free trial"
     }
