@@ -17,12 +17,12 @@ Start app: ```npm serve```
 Auto-lint: ```npm lint```
 
 ### Updating NPM package
-1. Make changes to be-navigation
+1. Make changes to be-navigation files
 2. Increment the version number in package.json
-3. If adding a new component that needs to get exported. Import the component into install.js
-4. Build /dist folder - ```npm run build library```
-5. Publish to npm - ```npm publish```
-6. Merge changes to origin/main
+3. Build /dist folder - ```npm run build library```
+4. Publish to npm - ```npm publish```
+5. Merge changes to origin/main
+6. Once the package has been published it's now ready to be updated in the consuming repositories (Example: www, Buyer Experience)
 
 ## Installation
 be-navigation is available as an [npm package](https://www.npmjs.com/package/be-navigation).
