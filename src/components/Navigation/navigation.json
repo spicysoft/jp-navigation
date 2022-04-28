@@ -502,16 +502,17 @@
         {
           "title": "Features",
           "header": "Features",
-          "link": {
-            "text": "View all features",
-            "link": "/features/"
-          },
-          "ga": {
-            "data-nav-levelone": "platform",
-            "data-nav-leveltwo": "features",
-            "data-nav-levelthree": "view all features"
-          },
           "categories": [
+            {
+              "title": "View all features",
+              "description": "Explore GitLab’s capabilities for every stage of the DevOps lifecycle",
+              "link": "/features/",
+              "ga": {
+                "data-nav-levelone": "platform",
+                "data-nav-leveltwo": "features",
+                "data-nav-levelthree": "view all features"
+              }
+            },
             {
               "title": "Feature comparison",
               "description": "See what you can do with GitLab — from planning to production",
