@@ -46,7 +46,7 @@ export default {
 </script>
 
 <template>
-  <footer class="footer">
+  <footer id="be-footer" class="footer">
     <SlpContainer>
       <SlpRow class="footer__navigation">
         <SlpColumn :cols="2" class="logo">
