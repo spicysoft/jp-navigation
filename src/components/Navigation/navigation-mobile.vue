@@ -51,7 +51,7 @@ export default Vue.extend({
   <div>
     <div class="tablet">
       <SlpButton variant="icon" href="/">
-        <GitLabIcon />
+        <GitLabIcon ariaId="tanukiHomeTablet" />
       </SlpButton>
       <div>
         <SlpButton
@@ -116,7 +116,7 @@ export default Vue.extend({
           <SearchIcon />
         </SlpButton>
         <SlpButton variant="icon" href="/" data-nav="logo">
-          <GitLabIcon :size="24" />
+          <GitLabIcon ariaId="tanukiHomeMobile" :size="24" />
         </SlpButton>
         <SlpButton
           variant="icon"

@@ -96,7 +96,7 @@ export default Vue.extend({
           class="nav-menu-top_logo"
         >
           <SlpButton variant="icon" href="/" data-nav="logo">
-            <GitLabIcon />
+            <GitLabIcon ariaId="tanukiHomeMobileMenu" />
           </SlpButton>
           <SlpButton variant="icon" @click.native="$emit('onClose')">
             <CloseIcon />

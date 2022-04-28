@@ -139,7 +139,7 @@ export default Vue.extend({
       <div class="navigation-bottom">
         <div class="navigation-bottom-left">
           <SlpButton class="slp-mr-8" variant="icon" href="/" data-nav="logo">
-            <GitLabIcon />
+            <GitLabIcon ariaId="tanukiHomeDesktop" />
           </SlpButton>
           <ul>
             <SlpButton
