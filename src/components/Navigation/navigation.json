@@ -641,11 +641,11 @@
       "title": "Partners",
       "categories": [
         {
-          "title": "Technology partners",
-          "header": "Technology partners",
+          "title": "Alliance partners",
+          "header": "Alliance partners",
           "categories": [
             {
-              "title": "Find a technology partner",
+              "title": "Find an alliance partner",
               "description": "See our cloud partners and other integrators",
               "link": "/partners/technology-partners/",
               "ga": {
@@ -655,7 +655,7 @@
               }
             },
             {
-              "title": "Become a technology partner",
+              "title": "Become an alliance partner",
               "description": "Join our DevOps partner ecosystem",
               "link": "https://about.gitlab.com/partners/",
               "ga": {
