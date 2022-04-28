@@ -12,8 +12,6 @@ import {
 
 import ChevronIcon from "../../assets/chevron.vue";
 import CloseIcon from "../../assets/close.vue";
-import GitLabIcon from "../../assets/gitlab2.vue";
-import SearchIcon from "../../assets/search.vue";
 
 import AwsLogo from "../../assets/aws.vue";
 import GoogleCloudLogo from "../../assets/google_cloud.vue";
@@ -33,8 +31,6 @@ export default Vue.extend({
     IbmLogo,
     VMwareTanzuLogo,
     CloseIcon,
-    GitLabIcon,
-    SearchIcon,
     SlpButton,
     SlpColumn,
     SlpContainer,
