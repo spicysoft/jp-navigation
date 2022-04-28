@@ -656,7 +656,7 @@
             {
               "title": "Become a technology partner",
               "description": "Join our DevOps partner ecosystem",
-              "link": "https://partners.gitlab.com/English/register_email.aspx/",
+              "link": "https://about.gitlab.com/partners/",
               "ga": {
                 "data-nav-levelone": "partners",
                 "data-nav-leveltwo": "technology",
@@ -744,7 +744,7 @@
             {
               "title": "Become a channel partner",
               "description": "Grow your business alongside our DevOps experts",
-              "link": "https://partners.gitlab.com/English/#scroll-to-benefits/",
+              "link": "https://about.gitlab.com/partners/",
               "ga": {
                 "data-nav-levelone": "partners",
                 "data-nav-leveltwo": "channel partners",
