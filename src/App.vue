@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <SlpNavigation />
-    <SlpContainer>
+    <SlpContainer class="app-container">
       <h1 class="app-header">Navigation repository</h1>
       <p class="app-body">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel am
@@ -106,6 +106,10 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+#app {
+  background-color: #171321;
+}
+
 .app-header {
   margin-top: 128px;
   margin-bottom: 64px;
@@ -113,6 +117,10 @@ export default Vue.extend({
 
 .app-body {
   margin-bottom: 128px;
+}
+
+.app-container {
+  color: white;
 }
 
 .test {

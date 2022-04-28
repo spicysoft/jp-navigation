@@ -21,8 +21,16 @@ export default Vue.extend({
 
 <template>
   <nav id="navigation">
-    <slp-navigation-desktop class="navigation-desktop" :data="data" />
-    <slp-navigation-mobile class="navigation-mobile" :data="data" />
+    <slp-navigation-desktop
+      id="be-navigation-desktop"
+      class="navigation-desktop"
+      :data="data"
+    />
+    <slp-navigation-mobile
+      id="be-navigation-mobile"
+      class="navigation-mobile"
+      :data="data"
+    />
   </nav>
 </template>
 

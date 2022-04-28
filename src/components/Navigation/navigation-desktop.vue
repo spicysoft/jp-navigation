@@ -9,32 +9,6 @@ import ChevronIcon from "../../assets/chevron.vue";
 import GitLabIcon from "../../assets/gitlab2.vue";
 import SearchIcon from "../../assets/search.vue";
 
-let handleOutsideClick;
-Vue.directive("closable", {
-  bind(el, binding, vnode) {
-    handleOutsideClick = (e) => {
-      e.stopPropagation();
-      const { handler, exclude } = binding.value;
-      let clickedOnExcludedEl = false;
-      exclude.forEach((refName) => {
-        if (!clickedOnExcludedEl) {
-          const excludedEl = vnode.context.$refs[refName];
-          clickedOnExcludedEl = excludedEl.contains(e.target);
-        }
-      });
-      if (!el.contains(e.target) && !clickedOnExcludedEl) {
-        vnode.context[handler]();
-      }
-    };
-    document.addEventListener("click", handleOutsideClick);
-    document.addEventListener("touchstart", handleOutsideClick);
-  },
-  unbind() {
-    document.removeEventListener("click", handleOutsideClick);
-    document.removeEventListener("touchstart", handleOutsideClick);
-  },
-});
-
 export default Vue.extend({
   name: "SlpNavigationDesktop",
   components: {
@@ -58,7 +32,18 @@ export default Vue.extend({
       isSupportOpen: false,
     };
   },
+  mounted() {
+    document.addEventListener("click", this.handleOutsideClick);
+  },
   methods: {
+    handleOutsideClick(e) {
+      // Support dropdown is open and the click event target is outside the dropdown
+      if (this.isSupportOpen) {
+        if (!e.target.closest("#supportDropdown")) {
+          this.isSupportOpen = false;
+        }
+      }
+    },
     setActiveNavItem(navIndex) {
       if (navIndex === this.activeNavIndex && this.isNavOpen) {
         this.closeNavMenu();
@@ -87,11 +72,6 @@ export default Vue.extend({
     toggleSupport() {
       this.isSupportOpen = !this.isSupportOpen;
     },
-    closeSupport() {
-      if (this.isSupportOpen) {
-        this.isSupportOpen = false;
-      }
-    },
   },
 });
 </script>
@@ -109,37 +89,29 @@ export default Vue.extend({
     <div class="navigation" ref="navigation">
       <!-- TOP NAVIGATION BAR -->
       <div class="navigation-top">
-        <span ref="support-wrapper">
-          <SlpButton
-            class="support"
-            :class="{ active: isSupportOpen }"
-            variant="ghost"
-            @click.native="toggleSupport()"
-          >
-            {{ data.support.text }}
-            <ChevronIcon class="slp-ml-8" direction="down" fill="#74717A" />
-            <div
-              class="support-dropdown"
-              :class="{ active: isSupportOpen }"
-              v-closable="{
-                exclude: ['support-wrapper'],
-                handler: 'closeSupport',
-              }"
-            >
-              <ul>
-                <li
-                  v-for="supportItem in data.support.items"
-                  :key="supportItem.title"
-                  class="support-dropdown_item"
-                >
-                  <a v-bind="supportItem.ga" :href="supportItem.link">
-                    {{ supportItem.text }}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </SlpButton>
-        </span>
+        <SlpButton
+          id="supportDropdown"
+          class="support"
+          :class="{ active: isSupportOpen }"
+          variant="ghost"
+          @click.native="toggleSupport()"
+        >
+          {{ data.support.text }}
+          <ChevronIcon class="slp-ml-8" direction="down" fill="#74717A" />
+          <div class="support-dropdown" :class="{ active: isSupportOpen }">
+            <ul>
+              <li
+                v-for="supportItem in data.support.items"
+                :key="supportItem.title"
+                class="support-dropdown_item"
+              >
+                <a v-bind="supportItem.ga" :href="supportItem.link">
+                  {{ supportItem.text }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </SlpButton>
         <SlpButton
           :href="data.login.link"
           class="navigation-item-top slp-ml-24"
