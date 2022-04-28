@@ -33,6 +33,14 @@ export default {
       let clickEvent = new Event("oneTrustShowSettings", { bubbles: true });
       document.dispatchEvent(clickEvent);
     },
+    emitPageSource() {
+      let clickEvent = new Event("viewPageSource", { bubbles: true });
+      document.dispatchEvent(clickEvent);
+    },
+    emitIDE() {
+      let clickEvent = new Event("webIDE", { bubbles: true });
+      document.dispatchEvent(clickEvent);
+    },
   },
 };
 </script>
@@ -85,19 +93,21 @@ export default {
           </SlpTypography>
           <p>
             View
-            <a
-              href="https://gitlab.com/gitlab-com/www-gitlab-com/blob/master/sites/marketing/source/index.html.haml"
+            <button
+              @click="emitPageSource()"
               data-ga-name="page source"
               data-ga-location="footer"
-              >page source</a
             >
+              page source
+            </button>
             — Edit in
-            <a
-              href="https://gitlab.com/-/ide/project/gitlab-com/www-gitlab-com/edit/master/-/sites/marketing/source/index.html.haml"
+            <button
+              @click="emitIDE()"
               data-ga-name="web ide"
               data-ga-location="footer"
-              >Web IDE</a
             >
+              Web IDE
+            </button>
             — please
             <a
               href="https://gitlab.com/gitlab-com/www-gitlab-com/blob/master/CONTRIBUTING.md"
@@ -256,6 +266,16 @@ li a:not(.slp-btn) {
       display: inline-block;
       vertical-align: middle;
       margin-left: 5px;
+    }
+
+    button {
+      color: $color-text-50;
+      text-decoration: underline;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-weight: $font-weight-bold;
+      font-size: $text-body-3;
     }
   }
 
