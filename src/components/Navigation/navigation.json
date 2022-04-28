@@ -505,7 +505,7 @@
           "categories": [
             {
               "title": "View all features",
-              "description": "Explore GitLab’s capabilities for every stage of the DevOps lifecycle",
+              "description": "Explore GitLab's capabilities for every stage of the DevOps lifecycle",
               "link": "/features/",
               "ga": {
                 "data-nav-levelone": "platform",
