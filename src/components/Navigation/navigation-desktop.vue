@@ -32,18 +32,7 @@ export default Vue.extend({
       isSupportOpen: false,
     };
   },
-  mounted() {
-    document.addEventListener("click", this.handleOutsideClick);
-  },
   methods: {
-    handleOutsideClick(e) {
-      // Support dropdown is open and the click event target is outside the dropdown
-      if (this.isSupportOpen) {
-        if (!e.target.closest("#supportDropdown")) {
-          this.isSupportOpen = false;
-        }
-      }
-    },
     setActiveNavItem(navIndex) {
       if (navIndex === this.activeNavIndex && this.isNavOpen) {
         this.closeNavMenu();
@@ -69,8 +58,19 @@ export default Vue.extend({
       let clickEvent = new Event("searchClick", { bubbles: true });
       document.dispatchEvent(clickEvent);
     },
-    toggleSupport() {
-      this.isSupportOpen = !this.isSupportOpen;
+    handleSupportDropdown(e) {
+      // On focusout, close the menu unless the new focused target is within the dropdown.
+      if (e.type == "focusout") {
+        if (
+          !(
+            this.isSupportOpen && !!e.relatedTarget?.closest("#supportDropdown")
+          )
+        ) {
+          this.isSupportOpen = false;
+        }
+      } else if (e.type == "click") {
+        this.isSupportOpen = !this.isSupportOpen;
+      }
     },
   },
 });
@@ -94,7 +94,8 @@ export default Vue.extend({
           class="support"
           :class="{ active: isSupportOpen }"
           variant="ghost"
-          @click.native="toggleSupport()"
+          @click.native="(e) => handleSupportDropdown(e)"
+          @focusout.native="(e) => handleSupportDropdown(e)"
         >
           {{ data.support.text }}
           <ChevronIcon class="slp-ml-8" direction="down" fill="#74717A" />
@@ -142,21 +143,24 @@ export default Vue.extend({
             <GitLabIcon ariaId="tanukiHomeDesktop" />
           </SlpButton>
           <ul>
-            <SlpButton
+            <li
               v-for="(navItem, index) in data.items"
               :key="navItem.title"
-              tag="li"
-              variant="ghost"
               class="navigation-item"
-              :class="{ active: index === activeNavIndex }"
-              :href="navItem.link"
-              v-bind="navItem.ga"
-              :title="navItem.title"
-              @click.native="setActiveNavItem(index, $event)"
             >
-              {{ navItem.title }}
-              <ChevronIcon v-if="navItem.categories" direction="down" />
-            </SlpButton>
+              <SlpButton
+                variant="ghost"
+                class="navigation-item_button"
+                :class="{ active: index === activeNavIndex }"
+                :href="navItem.link"
+                v-bind="navItem.ga"
+                :title="navItem.title"
+                @click.native="setActiveNavItem(index, $event)"
+              >
+                {{ navItem.title }}
+                <ChevronIcon v-if="navItem.categories" direction="down" />
+              </SlpButton>
+            </li>
           </ul>
         </div>
         <div class="navigation-bottom-right">
@@ -295,44 +299,37 @@ a {
     color: $color-text-200 !important;
 
     .navigation-item {
-      position: relative;
       display: inline-block;
-      color: $color-text-200;
-
-      &:hover {
-        color: $color-text-300;
-        svg {
-          display: block;
-        }
-      }
-
-      &.active {
-        color: $color-text-300;
-        svg {
-          display: block;
-        }
-      }
-
-      svg {
-        display: none;
-        position: absolute;
-        bottom: -6px;
-        left: calc(50% - 8px);
-      }
 
       &:not(:last-child) {
         margin-right: $spacing-16;
       }
-    }
 
-    /* To prevent layout shift on bold hover */
-    .navigation-item::before {
-      display: block;
-      content: attr(title);
-      font-weight: bold;
-      height: 0;
-      overflow: hidden;
-      visibility: hidden;
+      &_button {
+        position: relative;
+        color: $color-text-200;
+
+        &:hover {
+          color: $color-text-300;
+          svg {
+            display: block;
+          }
+        }
+
+        &.active {
+          color: $color-text-300;
+          svg {
+            display: block;
+          }
+        }
+
+        svg {
+          display: none;
+          position: absolute;
+          bottom: -6px;
+          left: calc(50% - 8px);
+        }
+      }
     }
   }
 
