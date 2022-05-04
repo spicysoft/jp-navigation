@@ -12,14 +12,14 @@
 - Node - Check .nvmrc for the current node version.
 
 ### Local development
-Start app: ```npm serve```
+Start app: ```npm run serve```
 
-Auto-lint: ```npm lint```
+Auto-lint: ```npm run lint```
 
 ### Updating NPM package
 1. Make changes to be-navigation files
 2. Increment the version number in package.json
-3. Build /dist folder - ```npm run build library```
+3. Build /dist folder - ```npm run build-library```
 4. Publish to npm - ```npm publish```
 5. Merge changes to origin/main
 6. Once the package has been published it's now ready to be updated in the consuming repositories (Example: www, Buyer Experience)
