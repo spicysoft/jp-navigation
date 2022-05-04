@@ -115,7 +115,7 @@ export default Vue.extend({
         <SlpButton variant="icon" @click.native="emitSearchEvent()">
           <SearchIcon />
         </SlpButton>
-        <SlpButton variant="icon" href="/" data-nav="logo">
+        <SlpButton variant="icon" href="/" data-nav="logo" aria-label="Home">
           <GitLabIcon ariaId="tanukiHomeMobile" :size="24" />
         </SlpButton>
         <SlpButton

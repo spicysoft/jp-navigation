@@ -95,7 +95,7 @@ export default Vue.extend({
           v-if="sectionIndex && sectionIndex == -1"
           class="nav-menu-top_logo"
         >
-          <SlpButton variant="icon" href="/" data-nav="logo">
+          <SlpButton variant="icon" href="/" data-nav="logo" aria-label="Home">
             <GitLabIcon ariaId="tanukiHomeMobileMenu" />
           </SlpButton>
           <SlpButton variant="icon" @click.native="$emit('onClose')">
