@@ -20,7 +20,7 @@ Auto-lint: ```npm run lint```
 1. Make changes to be-navigation files
 2. Increment the version number in package.json
 3. Build /dist folder - ```npm run build-library```
-4. Publish to npm - ```npm publish```
+4. Publish to npm - ```npm publish``` (Note: You may need to login with your npm credentials using ```npm login```)
 5. Merge changes to origin/main
 6. Once the package has been published it's now ready to be updated in the consuming repositories (Example: www, Buyer Experience)
 
