@@ -124,6 +124,7 @@ export default {
               href="https://twitter.com/gitlab"
               data-ga-name="twitter"
               data-ga-location="footer"
+              aria-label="Twitter"
             >
               <SlpTwitter class="social__links--icon" />
             </a>
@@ -133,6 +134,7 @@ export default {
               href="https://www.facebook.com/gitlab"
               data-ga-name="facebook"
               data-ga-location="footer"
+              aria-label="Facebook"
             >
               <SlpFacebook class="social__links--icon" />
             </a>
@@ -142,6 +144,7 @@ export default {
               href="https://www.youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg"
               data-ga-name="youtube"
               data-ga-location="footer"
+              aria-label="YouTube"
             >
               <SlpYoutube class="social__links--icon" />
             </a>
@@ -151,6 +154,7 @@ export default {
               href="https://www.linkedin.com/company/gitlab-com"
               data-ga-name="linkedin"
               data-ga-location="footer"
+              aria-label="LinkedIn"
             >
               <SlpLinkedin class="social__links--icon" />
             </a>
@@ -240,6 +244,11 @@ li a:not(.slp-btn) {
     width: 24px;
     height: auto;
     color: $color-text-50;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-accent-400;
+    }
   }
 
   .footer__cta {

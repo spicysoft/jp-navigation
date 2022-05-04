@@ -132,14 +132,24 @@ export default Vue.extend({
         >
           {{ data.register.text }}
         </SlpButton>
-        <SlpButton variant="icon" @click.native="emitSearchEvent()">
+        <SlpButton
+          variant="icon"
+          aria-label="Search"
+          @click.native="emitSearchEvent()"
+        >
           <SearchIcon />
         </SlpButton>
       </div>
       <!-- BOTTOM NAVIGATION BAR -->
       <div class="navigation-bottom">
         <div class="navigation-bottom-left">
-          <SlpButton class="slp-mr-8" variant="icon" href="/" data-nav="logo">
+          <SlpButton
+            class="slp-mr-8"
+            variant="icon"
+            href="/"
+            data-nav="logo"
+            aria-label="Home"
+          >
             <GitLabIcon ariaId="tanukiHomeDesktop" />
           </SlpButton>
           <ul>
