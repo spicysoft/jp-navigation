@@ -565,13 +565,43 @@
               }
             },
             {
-              "title": "Automated Software Delivery",
+              "title": "Automated software delivery",
               "description": "Achieve your goals faster with automation",
               "link": "/solutions/delivery-automation/",
               "ga": {
                 "data-nav-levelone": "solutions",
                 "data-nav-leveltwo": "solutions",
                 "data-nav-levelthree": "automated delivery"
+              }
+            },
+            {
+              "title": "Continuous software security",
+              "description": "Shift security left with built-in DevSecOps",
+              "link": "/solutions/dev-sec-ops/",
+              "ga": {
+                "data-nav-levelone": "solutions",
+                "data-nav-leveltwo": "solutions",
+                "data-nav-levelthree": "dev sec ops"
+              }
+            },
+            {
+              "title": "Accelerate digital transformation",
+              "description": "Reach your digital transformation objectives faster with GitLab",
+              "link": "/solutions/digital-transformation/",
+              "ga": {
+                "data-nav-levelone": "solutions",
+                "data-nav-leveltwo": "solutions",
+                "data-nav-levelthree": "dev sec ops"
+              }
+            },
+            {
+              "title": "Continuous software compliance",
+              "description": "Define, enforce, and report on compliance in one platform",
+              "link": "/solutions/compliance/",
+              "ga": {
+                "data-nav-levelone": "solutions",
+                "data-nav-leveltwo": "solutions",
+                "data-nav-levelthree": "compliance"
               }
             }
           ]
