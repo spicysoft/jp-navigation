@@ -577,11 +577,11 @@
             {
               "title": "Continuous software security",
               "description": "Shift security left with built-in DevSecOps",
-              "link": "/solutions/dev-sec-ops/",
+              "link": "/solutions/continuous-software-security-assurance/",
               "ga": {
                 "data-nav-levelone": "solutions",
                 "data-nav-leveltwo": "solutions",
-                "data-nav-levelthree": "dev sec ops"
+                "data-nav-levelthree": "continuous software security"
               }
             },
             {
