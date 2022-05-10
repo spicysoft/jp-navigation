@@ -139,6 +139,14 @@
         "url": "/handbook/"
       },
       {
+        "name": "Terms of Use",
+        "url": "/terms/"
+      },
+      {
+        "name": "Privacy Policy",
+        "url": "/privacy/"
+      },
+      {
         "name": "Cookie Preferences",
         "is_actually_onetrust_button": true,
         "id": "ot-sdk-btn"
