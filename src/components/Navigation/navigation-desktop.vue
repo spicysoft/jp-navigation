@@ -155,6 +155,7 @@ export default Vue.extend({
           <ul>
             <li
               v-for="(navItem, index) in data.items"
+              v-show="!navItem.mobileOnly"
               :key="navItem.title"
               class="navigation-item"
             >
