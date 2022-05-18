@@ -42,7 +42,7 @@ export default Vue.extend({
 <template>
   <div>
     <div class="tablet">
-      <SlpButton variant="icon" href="/">
+      <SlpButton variant="icon" href="/handbook">
         <GitLabIcon ariaId="tanukiHomeTablet" />
       </SlpButton>
       <div>
@@ -61,7 +61,12 @@ export default Vue.extend({
         <SlpButton variant="icon" @click.native="emitSearchEvent()">
           <SearchIcon />
         </SlpButton>
-        <SlpButton variant="icon" href="/" data-nav="logo" aria-label="Home">
+        <SlpButton
+          variant="icon"
+          href="/handbook"
+          data-nav="logo"
+          aria-label="Home"
+        >
           <GitLabIcon ariaId="tanukiHomeMobile" :size="24" />
         </SlpButton>
         <SlpButton variant="icon" class="slp-ml-16"> </SlpButton>

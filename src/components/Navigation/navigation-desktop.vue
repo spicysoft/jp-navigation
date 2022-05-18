@@ -85,30 +85,29 @@ export default Vue.extend({
       :data="data"
     />
     <div class="navigation" ref="navigation">
-      <!-- TOP NAVIGATION BAR -->
-      <div class="navigation-top">
-        <SlpButton
-          variant="icon"
-          aria-label="Search"
-          @click.native="emitSearchEvent()"
-        >
-          <SearchIcon />
-        </SlpButton>
-      </div>
       <!-- BOTTOM NAVIGATION BAR -->
       <div class="navigation-bottom">
         <div class="navigation-bottom-left">
           <SlpButton
             class="slp-mr-8"
-            variant="icon"
-            href="/"
+            variant="ghost"
+            href="/handbook"
             data-nav="logo"
             aria-label="Home"
           >
             <GitLabIcon ariaId="tanukiHomeDesktop" />
+            <span style="margin-left: 1em">ハンドブック日本語版</span>
           </SlpButton>
         </div>
-        <div class="navigation-bottom-right"></div>
+        <div class="navigation-bottom-right">
+          <SlpButton
+            variant="icon"
+            aria-label="Search"
+            @click.native="emitSearchEvent()"
+          >
+            <SearchIcon />
+          </SlpButton>
+        </div>
       </div>
     </div>
   </div>
