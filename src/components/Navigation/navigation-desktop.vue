@@ -5,14 +5,12 @@ import { SlpButton } from "slippers-ui";
 
 import SlpNavigationDesktopMenu from "./navigation-desktop-menu.vue";
 
-import ChevronIcon from "../../assets/chevron.vue";
 import GitLabIcon from "../../assets/gitlab2.vue";
 import SearchIcon from "../../assets/search.vue";
 
 export default Vue.extend({
   name: "SlpNavigationDesktop",
   components: {
-    ChevronIcon,
     GitLabIcon,
     SearchIcon,
     SlpButton,
@@ -90,49 +88,6 @@ export default Vue.extend({
       <!-- TOP NAVIGATION BAR -->
       <div class="navigation-top">
         <SlpButton
-          id="supportDropdown"
-          class="support"
-          :class="{ active: isSupportOpen }"
-          variant="ghost"
-          @click.native="(e) => handleSupportDropdown(e)"
-          @focusout.native="(e) => handleSupportDropdown(e)"
-        >
-          {{ data.support.text }}
-          <ChevronIcon class="slp-ml-8" direction="down" fill="#74717A" />
-          <div class="support-dropdown" :class="{ active: isSupportOpen }">
-            <ul>
-              <li
-                v-for="supportItem in data.support.items"
-                :key="supportItem.title"
-                class="support-dropdown_item"
-              >
-                <a v-bind="supportItem.ga" :href="supportItem.link">
-                  {{ supportItem.text }}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </SlpButton>
-        <SlpButton
-          :href="data.login.link"
-          class="navigation-item-top slp-ml-24"
-          variant="ghost"
-          :title="data.login.text"
-          v-bind="data.login.ga"
-        >
-          {{ data.login.text }}
-        </SlpButton>
-        <span>/</span>
-        <SlpButton
-          :href="data.register.link"
-          class="navigation-item-top slp-mr-24"
-          variant="ghost"
-          :title="data.register.text"
-          v-bind="data.register.ga"
-        >
-          {{ data.register.text }}
-        </SlpButton>
-        <SlpButton
           variant="icon"
           aria-label="Search"
           @click.native="emitSearchEvent()"
@@ -152,45 +107,8 @@ export default Vue.extend({
           >
             <GitLabIcon ariaId="tanukiHomeDesktop" />
           </SlpButton>
-          <ul>
-            <li
-              v-for="(navItem, index) in data.items"
-              v-show="!navItem.mobileOnly"
-              :key="navItem.title"
-              class="navigation-item"
-            >
-              <SlpButton
-                variant="ghost"
-                class="navigation-item_button"
-                :class="{ active: index === activeNavIndex }"
-                :href="navItem.link"
-                v-bind="navItem.ga"
-                :title="navItem.title"
-                @click.native="setActiveNavItem(index, $event)"
-              >
-                {{ navItem.title }}
-                <ChevronIcon v-if="navItem.categories" direction="down" />
-              </SlpButton>
-            </li>
-          </ul>
         </div>
-        <div class="navigation-bottom-right">
-          <SlpButton
-            :href="data.sales.link"
-            variant="tertiary"
-            class="slp-mr-8"
-            v-bind="data.sales.ga"
-          >
-            {{ data.sales.text }}
-          </SlpButton>
-          <SlpButton
-            :href="data.free_trial.link"
-            variant="primary"
-            v-bind="data.free_trial.ga"
-          >
-            {{ data.free_trial.text }}
-          </SlpButton>
-        </div>
+        <div class="navigation-bottom-right"></div>
       </div>
     </div>
   </div>

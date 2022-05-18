@@ -1,19 +1,19 @@
 {
-  "name": "be-navigation",
+  "name": "jp-navigation",
   "version": "1.0.26",
   "private": false,
   "description": "GitLab Marketing Navigation",
   "author": "GitLab",
-  "main": "./dist/be-navigation.umd.min.js",
+  "main": "./dist/jp-navigation.umd.min.js",
   "files": [
-    "dist/be-navigation.umd.min.js",
-    "dist/be-navigation.css"
+    "dist/jp-navigation.umd.min.js",
+    "dist/jp-navigation.css"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-library": "vue-cli-service build --target lib --formats umd-min --name be-navigation ./src/install.js"
+    "build-library": "vue-cli-service build --target lib --formats umd-min --name jp-navigation ./src/install.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",

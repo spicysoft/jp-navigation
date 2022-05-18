@@ -5,21 +5,13 @@ import { SlpButton } from "slippers-ui";
 
 import SlpNavigationMobileMenu from "./navigation-mobile-menu.vue";
 
-import ArrowIcon from "../../assets/arrow.vue";
-import AssigneeIcon from "../../assets/assignee.vue";
 import GitLabIcon from "../../assets/gitlab2.vue";
-import HamburgerIcon from "../../assets/hamburger.vue";
-import ProfileIcon from "../../assets/profile.vue";
 import SearchIcon from "../../assets/search.vue";
 
 export default Vue.extend({
   name: "SlpNavigationMobile",
   components: {
-    ArrowIcon,
-    AssigneeIcon,
     GitLabIcon,
-    HamburgerIcon,
-    ProfileIcon,
     SearchIcon,
     SlpButton,
     SlpNavigationMobileMenu,
@@ -55,62 +47,16 @@ export default Vue.extend({
       </SlpButton>
       <div>
         <SlpButton
-          :href="data.sales.link"
-          variant="tertiary"
-          class="slp-mr-8"
-          v-bind="data.sales.ga"
-        >
-          {{ data.sales.text }}
-        </SlpButton>
-        <SlpButton
-          :href="data.free_trial.link"
-          variant="primary"
-          v-bind="data.free_trial.ga"
-        >
-          {{ data.free_trial.text }}
-        </SlpButton>
-        <SlpButton
-          variant="icon"
-          :href="data.login.link"
-          class="slp-ml-16"
-          v-bind="data.login.ga"
-        >
-          <ProfileIcon />
-        </SlpButton>
-        <SlpButton
-          variant="icon"
-          :href="data.register.link"
-          class="slp-ml-16"
-          v-bind="data.register.ga"
-        >
-          <AssigneeIcon />
-        </SlpButton>
-        <SlpButton
           variant="icon"
           class="slp-ml-16"
           @click.native="emitSearchEvent()"
         >
           <SearchIcon />
         </SlpButton>
-        <SlpButton
-          variant="icon"
-          class="slp-ml-16"
-          @click.native="toggleNavMenu()"
-        >
-          <HamburgerIcon />
-        </SlpButton>
+        <SlpButton variant="icon" class="slp-ml-16"> </SlpButton>
       </div>
     </div>
     <div class="phone">
-      <SlpButton
-        :href="data.free_trial.link"
-        variant="primary"
-        class="navigation-top"
-        v-bind="data.free_trial.ga"
-      >
-        {{ data.free_trial.text }}
-        <ArrowIcon class="slp-ml-4" direction="right" fill="#fff" />
-      </SlpButton>
       <div class="navigation-bottom">
         <SlpButton variant="icon" @click.native="emitSearchEvent()">
           <SearchIcon />
@@ -118,13 +64,7 @@ export default Vue.extend({
         <SlpButton variant="icon" href="/" data-nav="logo" aria-label="Home">
           <GitLabIcon ariaId="tanukiHomeMobile" :size="24" />
         </SlpButton>
-        <SlpButton
-          variant="icon"
-          class="slp-ml-16"
-          @click.native="toggleNavMenu()"
-        >
-          <HamburgerIcon />
-        </SlpButton>
+        <SlpButton variant="icon" class="slp-ml-16"> </SlpButton>
       </div>
     </div>
     <SlpNavigationMobileMenu

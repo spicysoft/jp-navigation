@@ -2,10 +2,6 @@
 import { SlpContainer, SlpRow, SlpColumn, SlpTypography } from "slippers-ui";
 
 import GitLabIcon from "../../assets/gitlab.vue";
-import SlpTwitter from "../../assets/fa-twitter.vue";
-import SlpFacebook from "../../assets/fa-facebook.vue";
-import SlpYoutube from "../../assets/fa-youtube.vue";
-import SlpLinkedin from "../../assets/fa-linkedin.vue";
 
 import data from "./footer.json";
 
@@ -17,10 +13,6 @@ export default {
     SlpColumn,
     SlpTypography,
     GitLabIcon,
-    SlpTwitter,
-    SlpFacebook,
-    SlpYoutube,
-    SlpLinkedin,
   },
   data() {
     return {
@@ -52,55 +44,27 @@ export default {
         <SlpColumn :cols="2" class="logo">
           <GitLabIcon />
         </SlpColumn>
-        <SlpColumn :cols="10" class="content">
-          <div v-for="item in content" :key="item.heading" class="column">
-            <h3 class="column__heading">
-              {{ item.heading }}
-            </h3>
-            <ul class="links">
-              <li
-                v-for="link in item.links"
-                :key="link.name"
-                class="links__item"
-              >
-                <button
-                  v-if="link.is_actually_onetrust_button"
-                  :id="link.id"
-                  class="ot-sdk-show-settings"
-                  @click="emitOneTrustEvent()"
-                >
-                  {{ link.name }}
-                </button>
-                <a
-                  v-else
-                  :href="link.url"
-                  class="link"
-                  :data-ga-name="link.name"
-                  data-ga-location="footer"
-                >
-                  {{ link.name }}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </SlpColumn>
+        <SlpColumn :cols="10" class="content"><div></div></SlpColumn>
       </SlpRow>
       <div class="footer__cta">
         <div class="source">
+          <p>
+            GitLabさんの<a href="https://about.gitlab.com/handbook/">Handbook</a
+            >を日本語翻訳しているサイトです
+          </p>
           <SlpTypography tag="p">
-            Git is a trademark of Software Freedom Conservancy and our use of
-            'GitLab' is under license
+            Git は、Software Freedom Conservancy
+            の商標です。'GitLab'での使用はライセンスをうけています
           </SlpTypography>
           <p>
-            View
             <button
               @click="emitPageSource()"
               data-ga-name="page source"
               data-ga-location="footer"
             >
-              page source
+              ソースコード
             </button>
-            — Edit in
+            を閲覧する —
             <button
               @click="emitIDE()"
               data-ga-name="web ide"
@@ -108,58 +72,16 @@ export default {
             >
               Web IDE
             </button>
-            — please
+            で編集する — ぜひ
             <a
-              href="https://gitlab.com/gitlab-com/www-gitlab-com/blob/master/CONTRIBUTING.md"
+              href="https://gitlab.com/tech4u_dev/jp-www-gitlab-com/blob/master/CONTRIBUTING.md"
               data-ga-name="please contribute"
               data-ga-location="footer"
-              >contribute</a
+              >手伝ってください</a
             >.
           </p>
           <p>&copy; {{ currentYear }} GitLab B.V.</p>
         </div>
-        <ul class="social__links">
-          <li class="social__links--item">
-            <a
-              href="https://twitter.com/gitlab"
-              data-ga-name="twitter"
-              data-ga-location="footer"
-              aria-label="Twitter"
-            >
-              <SlpTwitter class="social__links--icon" />
-            </a>
-          </li>
-          <li class="social__links--item">
-            <a
-              href="https://www.facebook.com/gitlab"
-              data-ga-name="facebook"
-              data-ga-location="footer"
-              aria-label="Facebook"
-            >
-              <SlpFacebook class="social__links--icon" />
-            </a>
-          </li>
-          <li class="social__links--item">
-            <a
-              href="https://www.youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg"
-              data-ga-name="youtube"
-              data-ga-location="footer"
-              aria-label="YouTube"
-            >
-              <SlpYoutube class="social__links--icon" />
-            </a>
-          </li>
-          <li class="social__links--item">
-            <a
-              href="https://www.linkedin.com/company/gitlab-com"
-              data-ga-name="linkedin"
-              data-ga-location="footer"
-              aria-label="LinkedIn"
-            >
-              <SlpLinkedin class="social__links--icon" />
-            </a>
-          </li>
-        </ul>
       </div>
     </SlpContainer>
   </footer>
@@ -256,7 +178,7 @@ li a:not(.slp-btn) {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding-top: $spacing-96;
+    padding-top: $spacing-16;
   }
 
   .source {
