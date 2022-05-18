@@ -1,8 +1,8 @@
 {
   "name": "jp-navigation",
-  "version": "1.0.26",
+  "version": "1.0.26.1",
   "private": false,
-  "description": "GitLab Marketing Navigation",
+  "description": "日本語翻訳 GitLab Marketing Navigation",
   "author": "GitLab",
   "main": "./dist/jp-navigation.umd.min.js",
   "files": [
@@ -39,12 +39,12 @@
     "vue-template-compiler": "^2.6.14"
   },
   "bugs": {
-    "url": "https://gitlab.com/gitlab-com/marketing/digital-experience/buyer-experience/-/issues"
+    "url": "https://gitlab.com/tech4u_dev/jp-navigation/-/issues"
   },
-  "homepage": "https://gitlab-com.gitlab.io/marketing/digital-experience/navigation",
+  "homepage": "https://gitlab.com/tech4u_dev/jp-navigation/",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/gitlab-com/marketing/digital-experience/navigation.git"
+    "url": "https://gitlab.com/tech4u_dev/jp-navigation.git"
   }
 }
